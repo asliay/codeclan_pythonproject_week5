@@ -1,5 +1,5 @@
 class Label():
 
-    def __init__(self, label_name, id=None):
-        self.label_name = label_name
+    def __init__(self, name, id=None):
+        self.name = name
         self.id = id

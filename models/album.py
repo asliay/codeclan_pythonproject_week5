@@ -1,4 +1,4 @@
-class Vinyl:
+class Album:
 
     def __init__(self, title, artist, genre, price, cost_price, release_year, label, stock=0, id=None):
         self.title = title
