@@ -3,14 +3,29 @@
 {% block content %}
 <h1>Albums</h1>
 
-<ul>
+<section id="album-entry">
     {% for album in albums %}
-    <li>
-        {{ album.title }}
-    </li>
-    <li>    
-        {{ album.artist.name }}
-    </li>
+        
+        <p>Album Title: {{ album.title }}</p>
+        <p>Artist: {{ album.artist.name }}</p>
+        <p>Genre: {{ album.genre }}</p>
+        <p>Record Label: {{ album.label.name }}</p>
+        <p>Release Year: {{ album.release_year }}</p>
+        
+        <p>R.R.P: {{ album.price }}</p>
+        <p>Cost Price: {{ album.cost_price }}</p>
+        <p>Stock Level = {{ album.stock }}</p>
+        <!-- <form class="order-form" action="/albums/{{album.id}}/order" method="POST">
+            <input type="number"
+                    min="1"
+                    name="order_amount"
+                    id="order_amount">
+            <button type="submit" class="order-button">ORDER STOCK</button>
+        </form> -->
+        <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
+            <button class="trash-button">DELETE STOCK RECORD</button>
+        </form>
+        <hr>
 {% endfor %}
-</ul>
+</section>
 {% endblock content %}

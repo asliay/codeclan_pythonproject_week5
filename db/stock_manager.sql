@@ -20,5 +20,6 @@ CREATE TABLE albums (
     price FLOAT,
     cost_price FLOAT,
     label_id SERIAL REFERENCES labels(id) ON DELETE CASCADE,
+    stock INT NOT NULL DEFAULT 0,
     release_year INT
 );
