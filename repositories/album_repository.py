@@ -20,8 +20,9 @@ def select_all():
     sql = "SELECT * FROM albums"
     results = run_sql(sql)
     for row in results:
-        artist = artist_repository.select(row['artist_id'])
         label = label_repository.select(row['label_id'])
+        artist = artist_repository.select(row['artist_id'])
+        
         album = Album(row['title'], artist, row['genre'], row['price'], row['cost_price'], row['release_year'], label, row['id'])
         albums.append(album)
     return albums
