@@ -6,8 +6,8 @@ import repositories.label_repository as label_repository
 
 # SAVE
 def save(album):
-    sql = "INSERT INTO albums (title, artist_id, genre, price, cost_price, release_year, label_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [album.title, album.artist.id, album.genre, album.price, album.cost_price, album.release_year, album.label.id]
+    sql = "INSERT INTO albums (title, artist_id, genre, price, cost_price, release_year, stock, label_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [album.title, album.artist.id, album.genre, album.price, album.cost_price, album.release_year, album.stock, album.label.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     album.id = id
@@ -24,7 +24,7 @@ def select_all():
         label = label_repository.select(row['label_id'])
         artist = artist_repository.select(row['artist_id'])
         
-        album = Album(row['title'], artist, row['genre'], row['price'], row['cost_price'], row['release_year'], label, row['id'])
+        album = Album(row['title'], artist, row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], label, row['id'])
         albums.append(album)
     return albums
 
@@ -54,8 +54,8 @@ def delete(id):
 
 # UPDATE
 def update(album):
-    sql = "UPDATE albums SET (title, artist_id, genre, price, cost_price, release_year, label_id, stock) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [album.title, album.artist.id, album.genre, album.price, album.cost_price, album.release_year, album.label.id, album.stock]
+    sql = "UPDATE albums SET (title, artist_id, genre, price, cost_price, release_year, stock, label_id) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [album.title, album.artist.id, album.genre, album.price, album.cost_price, album.release_year, album.stock, album.label.id]
     run_sql(sql, values)
 
 
@@ -68,7 +68,7 @@ def albums_by_artist(artist):
     results = run_sql(sql, values)
 
     for row in results:
-        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['label_id'], row['id'])
+        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label_id'], row['id'])
         albums.append(album)
     return albums
 
@@ -81,12 +81,12 @@ def albums_by_label(label):
     results = run_sql(sql, values)
 
     for row in results:
-        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['label_id'], row['id'])
+        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label_id'], row['id'])
         albums.append(album)
     return albums
 
 #Change Stock Amount
-# def order_stock(album):
-#     sql = "UPDATE albums SET (stock) = (%s) WHERE id = %s"
-#     values = [album.stock]
-#     run_sql(sql, values)
+def order_stock(album):
+    sql = "UPDATE albums SET (album.stock) = (%s) WHERE id = %s"
+    values = [album.stock]
+    run_sql(sql, values)

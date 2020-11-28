@@ -19,11 +19,5 @@ def delete_album(id):
 
 # Order Stock?
 @albums_blueprint.route("/albums/<id>/order", methods=['POST'])
-def order(id):
-    #take order amount and update stock amount after pressing button
-    # album = album_repository.select(id)
-    # album.stock = request.form['order_amount']
-    # updated_stock = Album(album.title, album.artist, album.genre, album.price, album.cost_price, album.release_year, album.label, album.stock)
-    # album_repository.update(updated_stock)
-    # return redirect("/albums")
+def update_stock(id):
     pass
