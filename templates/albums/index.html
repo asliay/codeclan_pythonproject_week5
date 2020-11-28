@@ -7,7 +7,7 @@
     {% for album in albums %}
         
         <p>Album Title: {{ album.title }}</p>
-        <p>Artist: {{ album.artist.name }}</p>
+        <p>Artist: <a href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p>
         <p>Genre: {{ album.genre }}</p>
         <p>Record Label: {{ album.label.name }}</p>
         <p>Release Year: {{ album.release_year }}</p>
@@ -15,11 +15,11 @@
         <p>R.R.P: £{{ '%0.2f'| format(album.price) }}</p>
         <p>Cost Price: £{{ '%0.2f'| format(album.cost_price) }}</p>
 
-        {% if album.stock > 5 %}
+        {% if album.stock >= 3 %}
             <p>Stock Level = {{ album.stock }}</p>
         {% elif album.stock == 0 %}
             <p>OUT OF STOCK ❌ </p>
-        {% elif album.stock < 5%}
+        {% elif album.stock < 3 %}
             <p>Stock Level = {{ album.stock }} WARNING: LOW STOCK</p>
         {% endif %}
        

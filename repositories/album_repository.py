@@ -58,33 +58,6 @@ def update(album):
     values = [album.title, album.artist.id, album.genre, album.price, album.cost_price, album.release_year, album.stock, album.label.id]
     run_sql(sql, values)
 
-
-# Show all albums by a specific artist
-def albums_by_artist(artist):
-    albums = []
-
-    sql = "SELECT * FROM albums WHERE artist_id = %s"
-    values = [artist.id]
-    results = run_sql(sql, values)
-
-    for row in results:
-        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label_id'], row['id'])
-        albums.append(album)
-    return albums
-
-# Show all albums by a specific label
-def albums_by_label(label):
-    albums = []
-
-    sql = "SELECT * FROM albums WHERE label_id = %s"
-    values = [label.id]
-    results = run_sql(sql, values)
-
-    for row in results:
-        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label_id'], row['id'])
-        albums.append(album)
-    return albums
-
 #Change Stock Amount
 def order_stock(album):
     sql = "UPDATE albums SET (album.stock) = (%s) WHERE id = %s"

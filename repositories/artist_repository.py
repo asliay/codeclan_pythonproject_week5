@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
 
 from models.artist import Artist
+from models.label import Label
+from models.album import Album
 
 # SAVE
 def save(artist):
@@ -41,3 +43,16 @@ def delete_all():
 
 
 # UPDATE
+
+# Show all albums by a specific artist
+def albums_by_artist(artist):
+    albums = []
+
+    sql = "SELECT * FROM albums WHERE artist_id = %s"
+    values = [artist.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label_id'], row['id'])
+        albums.append(album)
+    return albums
