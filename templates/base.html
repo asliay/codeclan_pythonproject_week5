@@ -7,7 +7,7 @@
     <title>Vinyl Stock</title>
 </head>
 <body>
-    <main class="flex flex--row">
+    <header>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -15,11 +15,13 @@
                 <li><a href="/artists">Artists</a><li>
             </ul>
         </nav>
-    </main>
-    <section id="content">
-        {% block content %}
+    </header>
+    <main>
+        <section id="content">
+            {% block content %}
             
-        {% endblock content %}
-    </section>
+            {% endblock content %}
+        </section>
+    </main>
 </body>
 </html>

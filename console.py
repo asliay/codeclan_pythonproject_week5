@@ -97,13 +97,13 @@ album_repository.save(making_movies)
 # Fleetwood Mac Albums 
 tango = Album("Tango in the Night", fleetwood_mac, "Pop Rock", 20.00, 12.00, "1987", 8, "Warner Records")
 album_repository.save(tango)
-mirage = Album("Mirage", fleetwood_mac, "Soft Rock", 20.00, 12.00, "1982", 7, "Warner Records")
+mirage = Album("Mirage", fleetwood_mac, "Soft Rock", 20.00, 12.00, "1982", 0, "Warner Records")
 album_repository.save(mirage)
 tusk = Album("Tusk", fleetwood_mac, "Rock", 20.00, 12.00, "1979", 2, "Warner Records")
 album_repository.save(tusk)
-rumours = Album("Rumours", fleetwood_mac, "Folk Rock", 20.00, 12.00, "1977", 15, "Warner Records")
+rumours = Album("Rumours", fleetwood_mac, "Folk Rock", 20.00, 12.00, "1977", 8, "Warner Records")
 album_repository.save(rumours)
-fleetwood_self_titled = Album("Fleetwood Mac", fleetwood_mac, "Soft Rock", 20.00, 12.00, "1975", 8, "Warner Records")
+fleetwood_self_titled = Album("Fleetwood Mac", fleetwood_mac, "Soft Rock", 20.00, 12.00, "1975", 3, "Warner Records")
 album_repository.save(fleetwood_self_titled)
 
 # Frightened Rabbit Albums
@@ -122,15 +122,15 @@ album_repository.save(hozier_self_titled)
 
 
 # Leonard Cohen Albums
-thanks_for_the_dance = Album("Thanks for the Dance", leonard_cohen, "Folk Rock", 20.00, 12.00, "2019", 11, "Columbia Records")
+thanks_for_the_dance = Album("Thanks for the Dance", leonard_cohen, "Folk Rock", 20.00, 12.00, "2019", 5, "Columbia Records")
 album_repository.save(thanks_for_the_dance)
 darker = Album("You Want it Darker", leonard_cohen, "Folk Rock", 20.00, 12.00, "2016", 10, "Columbia Records")
 album_repository.save(darker)
-future = Album("The Future", leonard_cohen, "Soft Rock", 20.00, 12.00, "1992", 12, "Columbia Records")
+future = Album("The Future", leonard_cohen, "Soft Rock", 20.00, 12.00, "1992", 3, "Columbia Records")
 album_repository.save(future)
 your_man = Album("I'm Your Man", leonard_cohen, "Soft Rock", 20.00, 12.00, "1988", 0, "Columbia Records")
 album_repository.save(your_man)
-various_positions = Album("Various Positions", leonard_cohen, "Folk", 20.00, 12.00, "1985", 12, "Columbia Records")
+various_positions = Album("Various Positions", leonard_cohen, "Folk", 20.00, 12.00, "1985", 2, "Columbia Records")
 album_repository.save(various_positions)
 love_and_hate = Album("Songs of Love and Hate", leonard_cohen, "Folk", 20.00, 12.00, "1971", 9, "Columbia Records")
 album_repository.save(love_and_hate)
@@ -145,7 +145,7 @@ album_repository.save(past_life)
 
 
 # Paramore Albums
-after_laughter = Album("After Laughter", paramore, "Pop Rock", 17.99, 10.79, "2017", 15, "Fueled By Ramen")
+after_laughter = Album("After Laughter", paramore, "Pop Rock", 17.99, 10.79, "2017", 6, "Fueled By Ramen")
 album_repository.save(after_laughter)
 paramore_self_titled = Album("Paramore", paramore, "Pop Rock", 17.99, 10.79, "2013", 4, "Fueled By Ramen")
 album_repository.save(paramore_self_titled)
@@ -153,7 +153,7 @@ brand_new_eyes = Album("Brand New Eyes", paramore, "Pop Rock", 17.99, 10.79, "20
 album_repository.save(brand_new_eyes)
 riot = Album("Riot!", paramore, "Alt-Rock", 17.99, 10.79, "2007", 1, "Fueled By Ramen")
 album_repository.save(riot)
-falling = Album("All We Know is Falling", paramore, "Alt-Rock", 17.99, 10.79, "2005", 8, "Fueled By Ramen")
+falling = Album("All We Know is Falling", paramore, "Alt-Rock", 17.99, 10.79, "2005", 1, "Fueled By Ramen")
 album_repository.save(falling)
 
 # Phoebe Bridgers Albums
