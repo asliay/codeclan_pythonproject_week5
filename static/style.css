@@ -1,80 +1,72 @@
 body {
-    color: teal;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    padding: 0px;
-    margin: 0px;
+  background-color: #8DA9C4;
+  color: white;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  padding: 10px;
+  margin: 10px;
 }
 
-  nav {
-    padding: 5px;
-    margin: 5px;
-    /* padding-right: 25px; */
-  }
-  
-  nav ul li {
-    margin-bottom: 15px;
-    text-transform: uppercase;
-  }
-  
-  
-  main {
-    padding: 25px;
-  }
-  
-  #content {
-    border-left: 1px solid #254E70;
-    padding-left: 25px;
-  }
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #0B2545; /* Black */
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  li {
-    flex-grow: 1;
-  }
-  
-  li > a {
-    display: block;
-    padding: 1em;
-    background-color: teal;
-    text-align: center;
-    margin-bottom: 0.2em;
-    text-decoration: none;
-    color: white;
-    width: 6em;
-  }
-  
-  li > a:hover {
-    background-color: darkslategrey;
-  }
+.sidenav a {
+  padding: 6px 8px 30px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
 
-  .album-name {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: teal;
-  }
+.sidenav a:hover {
+  font-style: italic;
+}
 
-  .album-name:hover {
-     font-weight: bolder;
-     font-style: italic;
-  }
+.content {
+  margin-left: 160px; 
+  padding: 0px 10px;
+}
 
-  .btn span.icon {
-    background: url(imgs/icon.png) no-repeat;
-    float: left;
-    width: 10px;
-    height: 40px;
+.album-name {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: teal;
+}
+
+.album-name:hover {
+    font-weight: bolder;
+    font-style: italic;
 }
 
 .no-stock {
-  color: red;
+color: red;
 }
 
 .stock-warning {
-  color: coral;
+color: coral;
 }
+
+button {
+  background-color: #0B2545;
+  color: white;
+  border: none;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+

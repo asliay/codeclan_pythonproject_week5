@@ -8,16 +8,14 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/albums">Albums</a></li>
-                <li><a href="/artists">Artists</a><li>
-            </ul>
+        <nav class="sidenav">
+            <a href="/">Home</a>
+            <a href="/albums">Albums</a>
+            <a href="/artists">Artists</a>
         </nav>
     </header>
     <main>
-        <section id="content">
+        <section class="content">
             {% block content %}
             
             {% endblock content %}

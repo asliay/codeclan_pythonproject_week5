@@ -14,6 +14,13 @@ def artists():
     return render_template("artists/index.html", artists = artists)
     
 
+# NEW
+# GET ("/artists/new")
+@artists_blueprint.route("/artists/new", methods=['GET'])
+def new_artist():
+    return render_template("artists/new.html")
+  
+
 # Albums by a specific Artist
 @artists_blueprint.route("/artists/<id>")
 def artist_albums(id):

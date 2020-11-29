@@ -40,11 +40,21 @@ def delete_all():
     sql = "DELETE FROM artists"
     run_sql(sql)
 
+# DELETE by id
+def delete(id):
+    sql = "DELETE FROM artists WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 
 # UPDATE
+def update(artist):
+    sql = "UPDATE artists SET (name) = (%s) WHERE id = %s"
+    values = [artist.name]
+    run_sql(sql, values)
 
-# Show all albums by a specific artist
+
+# Shows all albums by a specific artist
 def albums_by_artist(artist):
     albums = []
 
