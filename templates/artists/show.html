@@ -3,14 +3,14 @@
 {% block content %}
 
     {% for album in albums %}
-    <p>Album Title: {{ album.title }}</p>
-    <p>Artist: {{ album.artist.name }}</a></p>
-    <p>Genre: {{ album.genre }}</p>
-    <p>Record Label: {{ album.label.name }}</p>
-    <p>Release Year: {{ album.release_year }}</p>
-    
-    <p>R.R.P: £{{ '%0.2f'| format(album.price) }}</p>
-    <p>Cost Price: £{{ '%0.2f'| format(album.cost_price) }}</p>
+        <p>Album Title: {{ album.title }}</p>
+        <p>Artist: {{ artist.name }}</a></p>
+        <p>Genre: {{ album.genre }}</p>
+        <p>Record Label: {{ album.label }}</p>
+        <p>Release Year: {{ album.release_year }}</p>
+        
+        <p>R.R.P: £{{ '%0.2f'| format(album.price) }}</p>
+        <p>Cost Price: £{{ '%0.2f'| format(album.cost_price) }}</p>
 
     {% if album.stock >= 3 %}
         <p>Stock Level = {{ album.stock }}</p>
@@ -19,7 +19,7 @@
     {% elif album.stock < 3 %}
         <p>Stock Level = {{ album.stock }} WARNING: LOW STOCK</p>
     {% endif %}
-   
+   <hr>
     {% endfor %}    
 
 {% endblock content %}

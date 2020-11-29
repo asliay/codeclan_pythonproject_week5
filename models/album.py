@@ -7,6 +7,7 @@ class Album:
         self.price = price
         self.cost_price = cost_price
         self.release_year = release_year
+        # self.cover_art = cover_art
         self.label = label
         self.stock = stock
         self.id = id

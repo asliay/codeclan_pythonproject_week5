@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 
 from models.artist import Artist
-from models.label import Label
+# from models.label import Label
 from models.album import Album
 
 # SAVE
@@ -53,6 +53,6 @@ def albums_by_artist(artist):
     results = run_sql(sql, values)
 
     for row in results:
-        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label_id'], row['id'])
+        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label'], row['id'])
         albums.append(album)
     return albums

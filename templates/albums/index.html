@@ -9,7 +9,7 @@
         <p>Album Title: {{ album.title }}</p>
         <p>Artist: <a href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p>
         <p>Genre: {{ album.genre }}</p>
-        <p>Record Label: {{ album.label.name }}</p>
+        <p>Record Label: {{ album.label }}</a></p>
         <p>Release Year: {{ album.release_year }}</p>
         
         <p>R.R.P: £{{ '%0.2f'| format(album.price) }}</p>

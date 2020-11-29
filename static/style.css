@@ -1,0 +1,40 @@
+body {
+    color: teal;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav {
+    padding: 0px;
+    margin: 0px;
+    padding-right: 25px;
+  }
+  
+  nav ul li {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+  }
+  
+  main {
+    padding: 25px;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex--row {
+    flex-direction: row;
+  }
+
+  #content {
+    border-left: 1px solid #254E70;
+    padding-left: 25px;
+  }
