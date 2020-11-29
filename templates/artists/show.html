@@ -2,9 +2,9 @@
 
 {% block content %}
 
-    {% for album in albums %}
+    {% for album in albums|sort(reverse = true,attribute="release_year") %}
         
-        <p>Album Title: {{ album.title }}</p>
+        <p>Album Title: <a class="album-title" href="/albums/{{album.id}}">{{ album.title }}</a></p>
         <p>Artist: {{ artist.name }}</a></p>
         <p>Genre: {{ album.genre }}</p>
         <p>Record Label: {{ album.label }}</p>

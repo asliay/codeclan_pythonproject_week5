@@ -9,7 +9,7 @@
     <tr>
         <th>Name</th> 
     </tr>
-    {% for artist in artists %}
+    {% for artist in artists|sort(attribute="name") %}
     <tr>
         <td><a href="/artists/{{artist.id}}">{{ artist.name }}</a></td>
     </tr>

@@ -38,9 +38,16 @@ def create_album():
 
 # SHOW
 # GET "/albums/<id>"
+@albums_blueprint.route("/albums/<id>", methods=['GET'])
+def show_album(id):
+    album = album_repository.select(id)
+    return render_template("albums/show.html", album = album)
+
 
 # EDIT
 # GET "/albums/<id>/edit"
+
+
 
 # UPDATE
 # PUT "albums/<id>"

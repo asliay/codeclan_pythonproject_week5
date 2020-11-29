@@ -1,11 +1,10 @@
-from flask import Flask, Blueprint, render_template
+from flask import Flask, Blueprint, render_template, redirect, request
 from models.artist import Artist
 import repositories.artist_repository as artist_repository
 import repositories.album_repository as album_repository
 # import repositories.label_repository as label_repository
 
 artists_blueprint = Blueprint("artists", __name__)
-
 
 # Artists page showing list of Artists in stock
 @artists_blueprint.route("/artists")
@@ -19,6 +18,21 @@ def artists():
 @artists_blueprint.route("/artists/new", methods=['GET'])
 def new_artist():
     return render_template("artists/new.html")
+
+# CREATE
+# POST "/artists"
+@artists_blueprint.route("/artists", methods=['POST'])
+def create_artist():
+    name = request.form['artist-name']
+    artist = Artist(name)
+    artist_repository.save(artist)
+    return redirect("/artists")
+
+# EDIT
+# GET "/albums/<id>/edit"
+
+# UPDATE
+# PUT "albums/<id>"
   
 
 # Albums by a specific Artist

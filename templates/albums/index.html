@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+<a href="/albums/new">Add New Album to Stock</a>
+
 <h1>Albums</h1>
-<a href="/albums/new">Add New Stock Record</a>
+
 <section id="album-entry">
     {% for album in albums|sort(attribute="artist.name") %}
         
-        <p>Album Title: {{ album.title }}</p>
-        <p>Artist: <a class="album-name" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p>
+        <p>Album Title: <a class="album-title" href="/albums/{{album.id}}">{{ album.title }}</p></a>
+        <p>Artist: <a class="album-artist" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p>
         <p>Genre: {{ album.genre }}</p>
         <p>Record Label: {{ album.label }}</a></p>
         <p>Release Year: {{ album.release_year }}</p>

@@ -35,7 +35,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     if result is not None:
         artist = artist_repository.select(result['artist_id'])
-        album = Album(result['title'], artist, result['genre'], result['price'], result['cost_price'], result['release_year'], result['label'], result['id'])
+        album = Album(result['title'], artist, result['genre'], result['price'], result['cost_price'], result['release_year'], result['stock'], result['label'], result['id'])
     return album
 
 

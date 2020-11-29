@@ -2,7 +2,17 @@
 
 {% block content %}
     
-<form action=""></form>
+<form action="/artists" method="post">
+    <div>
+        <input type="text"
+               name="artist-name"
+               id="artist-name"
+               placeholder="Band/ Artist Name"
+               required
+               autofocus>
+    </div>
+    <button class="submit-button">Add Artist to Inventory</button>
+</form>
 
 
 

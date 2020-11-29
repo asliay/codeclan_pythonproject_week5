@@ -14,7 +14,7 @@
     <div>
         <select name="artist_id" id="artist_id">
             <option value="">Choose Artist</option>
-            {% for artist in artists %}
+            {% for artist in artists|sort(attribute="name") %}
                 <option value="{{ artist.id }}">{{ artist.name }}</option>
             {% endfor %}
         </select>
@@ -69,7 +69,7 @@
                placeholder="Initial Stock Order"
                required>
     </div>
-    <button type="submit">Add Album to Stock</button>
+    <button class="submit-button" type="submit">Add Album to Inventory</button>
 </form>
 
 {% endblock content %}
