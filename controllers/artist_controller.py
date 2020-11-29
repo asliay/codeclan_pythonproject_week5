@@ -8,7 +8,7 @@ artists_blueprint = Blueprint("artists", __name__)
 
 # Artists page showing list of Artists in stock
 @artists_blueprint.route("/artists")
-def artists():
+def artists(): # Add something that deactivates artist link if no albums in stock?
     artists = artist_repository.select_all()
     return render_template("artists/index.html", artists = artists)
     
@@ -28,12 +28,6 @@ def create_artist():
     artist_repository.save(artist)
     return redirect("/artists")
 
-# EDIT
-# GET "/albums/<id>/edit"
-
-# UPDATE
-# PUT "albums/<id>"
-  
 
 # Albums by a specific Artist
 @artists_blueprint.route("/artists/<id>")

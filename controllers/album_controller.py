@@ -29,8 +29,8 @@ def create_album():
     price = request.form['price']
     cost_price = request.form['cost-price']
     release_year = request.form['release-year']
-    label = request.form['record-label']
     stock = request.form['stock']
+    label = request.form['record-label']
     album = Album(title, artist, genre, price, cost_price, release_year, stock, label)
     album_repository.save(album)
     return redirect("/albums")
@@ -46,12 +46,28 @@ def show_album(id):
 
 # EDIT
 # GET "/albums/<id>/edit"
-
+@albums_blueprint.route("/albums/<id>/edit", methods=['GET'])
+def edit_album(id):
+    album = album_repository.select(id)
+    artists = artist_repository.select_all()
+    return render_template("albums/edit.html", album = album, artists = artists)
 
 
 # UPDATE
 # PUT "albums/<id>"
-
+@albums_blueprint.route("/albums/<id>", methods=['POST'])
+def update_album(id):
+    title = request.form['title']
+    artist = artist_repository.select(request.form['artist_id'])
+    genre = request.form['genre']
+    price = request.form['price']
+    cost_price = request.form['cost-price']
+    release_year = request.form['release-year']
+    stock = request.form['stock']
+    label = request.form['record-label']
+    album = Album(title, artist, genre, price, cost_price, release_year, stock, label, id)
+    album_repository.update(album)
+    return redirect("/albums")
 
 
 # Delete's stock record and redirects to stock page

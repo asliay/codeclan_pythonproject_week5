@@ -63,6 +63,7 @@ button {
   transition: 0.3s;
   border-radius: 15px;
   padding: 10px 15px;
+  margin: 10px;
 }
 
 .submit-button {
