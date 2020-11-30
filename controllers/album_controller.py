@@ -30,7 +30,7 @@ def create_album():
     price = request.form['price']
     cost_price = request.form['cost-price']
     release_year = request.form['release-year']
-    cover_art = request.form['cover_art']
+    cover_art = request.form['cover-art']
     stock = request.form['stock']
     label = label_repository.select(request.form['label_id'])
     album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label)
@@ -66,7 +66,7 @@ def update_album(id):
     price = request.form['price']
     cost_price = request.form['cost-price']
     release_year = request.form['release-year']
-    cover_art = request.form['cover_art']
+    cover_art = request.form['cover-art']
     stock = request.form['stock']
     label = label_repository.select(request.form['label_id'])
     album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, id)
