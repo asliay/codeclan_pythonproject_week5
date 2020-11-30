@@ -4,37 +4,38 @@
 <a class="add-link" href="/albums/new">Add New Album to Stock</a>
 
 <h1>Albums</h1>
-
+<hr>
 <section>
     {% for album in albums|sort(attribute="artist.name") %}
         
-        <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="album-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
-        <p></p>
+    <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
+    <h3>Record Label: <a class="label-link2" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
     <div class="album-container">
         <table>
             <tr>
                 <td>Genre: {{ album.genre }}</td>
-                <td>Record Label: {{ album.label.name }}</td>
                 <td>Release Year: {{ album.release_year }}</td>
+                {% if album.stock >= 3 %}
+                <td>Qty. in Hand: {{ album.stock }}</td>
+            {% elif album.stock == 0 %}
+                <td class="no-stock"><span>OUT OF STOCK</span></td>
+            {% elif album.stock < 3 %}
+                <td class="stock-warning"><span> WARNING: LOW STOCK ({{album.stock}})</span></p></td>
+            {% endif %}
+                </td>
+                
             </tr>
             <tr>
                 <td>R.R.P: £{{ '%0.2f'| format(album.price) }}</td>
                 <td>Cost Price: £{{ '%0.2f'| format(album.cost_price) }}</td>
                 <td>Markup: {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
+
+               
             </tr>
         
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
     </div>
-        
-        {% if album.stock >= 3 %}
-            <p>Quantity in Hand: {{ album.stock }}</p>
-        {% elif album.stock == 0 %}
-            <p class="no-stock"><span>OUT OF STOCK</span></p>
-        {% elif album.stock < 3 %}
-            <p>Stock Level = {{ album.stock }}</p> <p class="stock-warning"><span> WARNING: LOW STOCK</span></p>
-        {% endif %}
-
     
         <div class="buttons-container">
             <form class="edit-form" action="/albums/{{album.id}}/edit">

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/labels" method="post">
+    <div>
+        <input type="text"
+               name="label-name"
+               id="label-name"
+               placeholder="Record Label Name"
+               required
+               autofocus>
+    </div>
+    <button class="stock-button">Add Record Label to Database</button>
+</form>
+    
+{% endblock content %}
+

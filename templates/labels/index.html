@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a class="add-link" href="/labels/new">Add New Record Label to Database</a>
+
+<h1>Record Labels</h1>
+
+    {% for label in labels|sort(attribute="name") %}
+        <ul>
+            <li class="label-entry"><a class="list-link" href="/labels/{{label.id}}">{{ label.name }}</li>
+        </ul>
+
+{% endfor %}
+
+    
+{% endblock content %}
+
+

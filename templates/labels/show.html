@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section>
-    
-    <span><p class="album-title"> {{ album.title }}</p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
-    <h3>Record Label: <p class="label-name"><a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></p></h3>
+
+    {% if albums|length == 0 %}
+        No albums on this label currently in stock!
+    {% endif %} 
+
+
+    {% for album in albums| sort(attribute="artist.name") %}
+
+<span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
+    <h3>Record Label: {{ album.label.name }}</h3>
     <div class="album-container">
         <table>
             <tr>
@@ -17,7 +23,7 @@
             {% elif album.stock < 3 %}
                 <td class="stock-warning"><span> WARNING: LOW STOCK ({{album.stock}})</span></p></td>
             {% endif %}
-                </td>
+                </td>    
             </tr>
             <tr>
                 <td>R.R.P: £{{ '%0.2f'| format(album.price) }}</td>
@@ -27,16 +33,17 @@
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
     </div>
+<div class="buttons-container">
+    <form class="edit-form" action="/albums/{{album.id}}/edit">
+        <button class="edit-button">EDIT</button>
+    </form>
+    <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
+        <button class="trash-button">DELETE</button>
+    </form>
+</div>
+<hr>
 
-    
-    <div class="buttons-container">
-        <form class="edit-form" action="/albums/{{album.id}}/edit">
-            <button class="edit-button">EDIT</button>
-        </form>
-        <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
-            <button class="trash-button">DELETE</button>
-        </form>
-    </div>
-</section>
-
+{% endfor %}
 {% endblock content %}
+
+

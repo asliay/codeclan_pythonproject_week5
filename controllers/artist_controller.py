@@ -35,4 +35,4 @@ def artist_albums(id):
     artist = artist_repository.select(id)
     label = label_repository.select(id)
     artists_albums = artist_repository.albums_by_artist(artist)
-    return render_template ("/artists/show.html", artist = artist, label = label, albums = artists_albums)
+    return render_template ("artists/show.html", artist = artist, label = label, albums = artists_albums)

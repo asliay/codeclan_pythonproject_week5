@@ -94,10 +94,9 @@ hr {
 .stock-warning {
   color: white;
   width: 280px;
-  padding: 5px;
 }
 
-.stock-warning > span {
+.stock-warning span {
   padding: 5px;
   background-color: #E57C04;
 }
@@ -106,37 +105,43 @@ h1 {
   text-transform: uppercase;
 }
 
-.album-title, .album-artist, .album-link {
-  font-size: 20px;
+.album-title, .album-artist, .album-link, .artist-link{
+  font-size: 30px;
   text-decoration: none;
   text-transform: uppercase;
   color: #13315C;
   display: inline-block;
 }
+
+
+.label-link {
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #13315C;
+}
+
 .add-link {
-  font-size: 40px;
+  font-size: 28px;
   padding: 10px;
+  margin-bottom: 50px;
   text-decoration: none;
   text-transform: uppercase;
   color: #AFBED1;
   background-color: #0B2545;
 }
 
-.album-link:hover, .add-link:hover {
+.album-link:hover, .artist-link:hover, .add-link:hover {
   font-style: italic;
 }
 
-.artist-entry, .artist-link {
+.artist-entry, .list-link, .label-entry, .list-link {
   text-decoration: none;
   list-style: none;
   color: white;
   text-transform: uppercase;
 }
 
-#by {
-  color: white;
-  margin-left: 10px;
-  margin-right: 10px;
-}
+
 
 

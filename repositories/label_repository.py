@@ -4,6 +4,8 @@ from models.label import Label
 from models.artist import Artist
 from models.album import Album
 
+import repositories.artist_repository as artist_repository
+
 # SAVE
 def save(label):
     sql = "INSERT INTO labels (name) VALUES (%s) RETURNING id"
@@ -54,7 +56,8 @@ def albums_by_label(label):
     results = run_sql(sql, values)
 
     for row in results:
-        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label_id'], row['id'])
+        artist = artist_repository.select(row['artist_id'])
+        album = Album(row['title'], artist, row['genre'], row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['id'])
         albums.append(album)
     return albums
 
