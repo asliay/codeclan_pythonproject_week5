@@ -49,6 +49,25 @@ body {
 
 /* Stock listings */
 
+/* .album-entry{
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */
+
+table {
+  width: 50%;
+  border: 2px solid #0B2545;
+  padding: 15px;
+}
+
+td {
+  padding: 10px;
+}
+
+
+
 hr {
   border: 1px solid #0B2545;
 }
@@ -60,17 +79,36 @@ hr {
 
 .no-stock {
   color: red;
+  background-color: white;
+  width: 150px;
+  padding: 5px;
 }
 
 .stock-warning {
   color: #E57C04;
+  background-color: white;
+  width: 180px;
+  padding: 5px;
 }
 
-.album-title, .album-artist, .album-link, .add-link {
+h1 {
+  text-transform: uppercase;
+}
+
+.album-title, .album-artist, .album-link {
+  font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
   color: #13315C;
   display: inline-block;
+}
+.add-link {
+  font-size: 40px;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #AFBED1;
+  background-color: #0B2545;
 }
 
 .album-link:hover, .add-link:hover {
@@ -84,5 +122,10 @@ hr {
   text-transform: uppercase;
 }
 
+#by {
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 
