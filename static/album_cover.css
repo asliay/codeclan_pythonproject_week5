@@ -1,0 +1,8 @@
+.cover-art {
+    display: flex;
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    margin:-70px 15px 10px 55px;
+    vertical-align: center;
+}

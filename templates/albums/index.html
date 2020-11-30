@@ -5,15 +5,16 @@
 
 <h1>Albums</h1>
 
-<section class="album-entry">
+<section>
     {% for album in albums|sort(attribute="artist.name") %}
         
         <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="album-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
         <p></p>
+    <div class="album-container">
         <table>
             <tr>
                 <td>Genre: {{ album.genre }}</td>
-                <td>Label: {{ album.label }}</td>
+                <td>Record Label: {{ album.label.name }}</td>
                 <td>Release Year: {{ album.release_year }}</td>
             </tr>
             <tr>
@@ -23,7 +24,9 @@
             </tr>
         
         </table>
-
+        <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
+    </div>
+        
         {% if album.stock >= 3 %}
             <p>Quantity in Hand: {{ album.stock }}</p>
         {% elif album.stock == 0 %}
@@ -31,7 +34,8 @@
         {% elif album.stock < 3 %}
             <p>Stock Level = {{ album.stock }}</p> <p class="stock-warning"><span> WARNING: LOW STOCK</span></p>
         {% endif %}
-       
+
+    
         <div class="buttons-container">
             <form class="edit-form" action="/albums/{{album.id}}/edit">
                 <button class="edit-button">EDIT</button>

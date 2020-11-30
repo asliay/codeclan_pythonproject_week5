@@ -54,11 +54,21 @@
             required/> 
     </div>
     <div>
+        <select name="label_id" id="label_id">
+            <option value="">Choose Label</option>
+            {% for label in labels|sort(attribute="name") %}
+                <option value="{{ label.id }}" 
+            {% if album.label.id == label.id %} selected="selected"{% endif %}>
+                {{ label.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
         <input type="text"
-           name="record-label"
-           id="record-label"
-           value="{{album.label}}"
-           required>
+                name="cover-art"
+                id="cover-art"
+                value="{{album.cover_art}}"
+                required>
     </div>
     <div>
         <input type="number"

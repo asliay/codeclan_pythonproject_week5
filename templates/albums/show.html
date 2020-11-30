@@ -1,16 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="album-entry">
-    <p class="album-title"> {{ album.title }}</p> by <p class="album-artist"><a class="album-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p>
+<section>
+    <!-- <p class="album-title"> {{ album.title }}</p> by <p class="album-artist"><a class="album-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p>
     <p>Genre: {{ album.genre }}</p>
-    <p>Label: {{ album.label }}</a></p>
+    <p>Label: {{ album.label.name }}</a></p>
     <p>Release Year: {{ album.release_year }}</p>
 
     <p>R.R.P: £{{ '%0.2f'| format(album.price) }}</p>
     <p>Cost Price: £{{ '%0.2f'| format(album.cost_price) }}</p>
     <p>Markup: {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</p>
 
+    <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art"> -->
+
+    <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="album-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
+        <p></p>
+    <div class="album-container">
+        <table>
+            <tr>
+                <td>Genre: {{ album.genre }}</td>
+                <td>Record Label: {{ album.label.name }}</td>
+                <td>Release Year: {{ album.release_year }}</td>
+            </tr>
+            <tr>
+                <td>R.R.P: £{{ '%0.2f'| format(album.price) }}</td>
+                <td>Cost Price: £{{ '%0.2f'| format(album.cost_price) }}</td>
+                <td>Markup: {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
+            </tr>
+        
+        </table>
+        <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
+    </div>
     {% if album.stock|int >= 3 %}
         <p>Quantity in Hand: {{ album.stock }}</p>
     {% elif album.stock|int == 0 %}
@@ -18,6 +38,8 @@
     {% elif album.stock|int < 3 %}
         <p>Stock Level = {{ album.stock }}</p> <p class="stock-warning"><span> WARNING: LOW STOCK</span></p>
     {% endif %}
+
+    
     <div class="buttons-container">
         <form class="edit-form" action="/albums/{{album.id}}/edit">
             <button class="edit-button">EDIT</button>

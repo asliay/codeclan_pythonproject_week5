@@ -1,8 +1,10 @@
 from db.run_sql import run_sql
 
 from models.artist import Artist
-# from models.label import Label
+from models.label import Label
 from models.album import Album
+
+import repositories.label_repository as label_repository
 
 # SAVE
 def save(artist):
@@ -63,6 +65,7 @@ def albums_by_artist(artist):
     results = run_sql(sql, values)
 
     for row in results:
-        album = Album(row['title'], row['artist_id'], row['genre'], row['price'], row['cost_price'], row['release_year'], row['stock'], row['label'], row['id'])
+        label = label_repository.select(row['label_id'])
+        album = Album(row['title'], artist, row['genre'], row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['id'])
         albums.append(album)
     return albums

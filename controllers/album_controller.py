@@ -2,6 +2,7 @@ from flask import Flask, Blueprint, render_template, redirect, request
 from models.album import Album
 import repositories.album_repository as album_repository
 import repositories.artist_repository as artist_repository
+import repositories.label_repository as label_repository
 
 albums_blueprint = Blueprint("albums", __name__)
 
@@ -16,22 +17,23 @@ def albums():
 @albums_blueprint.route("/albums/new", methods=['GET'])
 def new_album():
     artists = artist_repository.select_all()
-    return render_template("albums/new.html", artists = artists)
+    labels = label_repository.select_all()
+    return render_template("albums/new.html", artists = artists, labels = labels)
 
 # CREATE
 # POST "/albums"
 @albums_blueprint.route("/albums", methods=['POST'])
 def create_album():
     title = request.form['title']
-    artist_id = request.form['artist_id']
-    artist = artist_repository.select(artist_id)
+    artist = artist_repository.select(request.form['artist_id'])
     genre = request.form['genre']
     price = request.form['price']
     cost_price = request.form['cost-price']
     release_year = request.form['release-year']
+    cover_art = request.form['cover_art']
     stock = request.form['stock']
-    label = request.form['record-label']
-    album = Album(title, artist, genre, price, cost_price, release_year, stock, label)
+    label = label_repository.select(request.form['label_id'])
+    album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label)
     album_repository.save(album)
     return redirect("/albums")
 
@@ -50,10 +52,11 @@ def show_album(id):
 def edit_album(id):
     album = album_repository.select(id)
     artists = artist_repository.select_all()
-    return render_template("albums/edit.html", album = album, artists = artists)
+    labels = label_repository.select_all()
+    return render_template("albums/edit.html", album = album, artists = artists, labels = labels)
 
 
-# UPDATE - ----- not storing changes?
+# UPDATE - 
 # PUT "albums/<id>"
 @albums_blueprint.route("/albums/<id>", methods=['POST'])
 def update_album(id):
@@ -63,9 +66,10 @@ def update_album(id):
     price = request.form['price']
     cost_price = request.form['cost-price']
     release_year = request.form['release-year']
+    cover_art = request.form['cover_art']
     stock = request.form['stock']
-    label = request.form['record-label']
-    album = Album(title, artist, genre, price, cost_price, release_year, stock, label, id)
+    label = label_repository.select(request.form['label_id'])
+    album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, id)
     album_repository.update(album)
     return redirect("/albums")
 
@@ -75,8 +79,3 @@ def update_album(id):
 def delete_album(id):
     album_repository.delete(id)
     return redirect("/albums")
-
-# Order Stock?
-@albums_blueprint.route("/albums/<id>/order", methods=['POST'])
-def update_stock(id):
-    pass

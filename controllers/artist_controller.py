@@ -2,7 +2,7 @@ from flask import Flask, Blueprint, render_template, redirect, request
 from models.artist import Artist
 import repositories.artist_repository as artist_repository
 import repositories.album_repository as album_repository
-# import repositories.label_repository as label_repository
+import repositories.label_repository as label_repository
 
 artists_blueprint = Blueprint("artists", __name__)
 
@@ -33,5 +33,6 @@ def create_artist():
 @artists_blueprint.route("/artists/<id>")
 def artist_albums(id):
     artist = artist_repository.select(id)
+    label = label_repository.select(id)
     artists_albums = artist_repository.albums_by_artist(artist)
-    return render_template ("/artists/show.html", artist = artist, albums = artists_albums)
+    return render_template ("/artists/show.html", artist = artist, label = label, albums = artists_albums)

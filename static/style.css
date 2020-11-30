@@ -56,9 +56,15 @@ body {
   flex-wrap: wrap;
 } */
 
+.album-container {
+  display: flex;
+  flex-direction: row;
+  
+}
+
 table {
-  width: 50%;
   border: 2px solid #0B2545;
+  width: 50%;
   padding: 15px;
 }
 
@@ -66,10 +72,9 @@ td {
   padding: 10px;
 }
 
-
-
 hr {
   border: 1px solid #0B2545;
+  margin-bottom: 20px;
 }
 
 .content {

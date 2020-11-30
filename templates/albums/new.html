@@ -53,11 +53,19 @@
                 required/> 
     </div>
     <div>
+        <select name="label_id" id="label_id">
+            <option value="">Choose Label</option>
+            {% for label in labels|sort(attribute="name") %}
+                <option value="{{ label.id }}">{{ label.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
         <input type="text"
-               name="record-label"
-               id="record-label"
-               placeholder="Record Label"
-               required>
+                name="cover-art"
+                id="cover-art"
+                placeholder="Paste Image URL Here"
+                required>
     </div>
     <div>
         <input type="number"
