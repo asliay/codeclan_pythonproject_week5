@@ -53,7 +53,7 @@ def edit_album(id):
     return render_template("albums/edit.html", album = album, artists = artists)
 
 
-# UPDATE
+# UPDATE - ----- not storing changes?
 # PUT "albums/<id>"
 @albums_blueprint.route("/albums/<id>", methods=['POST'])
 def update_album(id):

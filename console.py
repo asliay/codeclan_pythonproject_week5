@@ -1,18 +1,16 @@
 import pdb
 from models.album import Album
 from models.artist import Artist
-# from models.label import Label
 
 import repositories.artist_repository as artist_repository
-# import repositories.label_repository as label_repository
 import repositories.album_repository as album_repository
 
+# Clears data from tables
 album_repository.delete_all()
-# label_repository.delete_all()
 artist_repository.delete_all()
 
-# ARTISTS
 
+# ARTISTS - Populates Artists table
 biffy = Artist("Biffy Clyro")
 artist_repository.save(biffy)
 dire_straits = Artist("Dire Straits")
@@ -23,8 +21,12 @@ frightened_rabbit = Artist("Frightened Rabbit")
 artist_repository.save(frightened_rabbit)
 hozier = Artist("Hozier")
 artist_repository.save(hozier)
+janelle = Artist("Janelle Monáe")
+artist_repository.save(janelle)
 leonard_cohen = Artist("Leonard Cohen")
 artist_repository.save(leonard_cohen)
+lizzo = Artist("Lizzo")
+artist_repository.save(lizzo)
 maggie_rogers = Artist("Maggie Rogers")
 artist_repository.save(maggie_rogers)
 paramore = Artist("Paramore")
@@ -37,10 +39,124 @@ tallest_man = Artist("The Tallest Man on Earth")
 artist_repository.save(tallest_man)
 
 
+# ALBUMS - Populates Albums table
+
+# Biffy Clyro Albums
+
+endings = Album("A Celebration of Endings", biffy, "Alternative Rock", 24.99, 14.99, "2020", 4, "14th Floor")
+album_repository.save(endings)
+ellipsis = Album("Ellipsis", biffy, "Alternative Rock", 19.99, 11.99, "2016", 5, "14th Floor")
+album_repository.save(ellipsis)
+opposites = Album("Opposites", biffy, "Alternative Rock", 22.99, 13.79, "2013", 3, "14th Floor")
+album_repository.save(opposites)
+revolutions = Album("Only Revolutions", biffy, "Alternative Rock", 19.99, 11.99, "2009", 2, "14th Floor")
+album_repository.save(revolutions)
+puzzle = Album("Puzzle", biffy, "Alternative Rock", 27.99, 16.79, "2007", 3, "14th Floor")
+album_repository.save(puzzle)
+
+# Dire Straits Albums
+brothers = Album("Brothers in Arms", dire_straits, "Rock", 25.99, 15.59, "1985", 1, "Vertigo")
+album_repository.save(brothers)
+making_movies = Album("Making Movies", dire_straits, "Rock", 24.99, 14.99, "1980", 2, "Vertigo")
+album_repository.save(making_movies)
+
+# Fleetwood Mac Albums 
+tango = Album("Tango in the Night", fleetwood_mac, "Pop Rock", 20.00, 12.00, "1987", 4, "Warner Records")
+album_repository.save(tango)
+mirage = Album("Mirage", fleetwood_mac, "Soft Rock", 20.00, 12.00, "1982", 0, "Warner Records")
+album_repository.save(mirage)
+tusk = Album("Tusk", fleetwood_mac, "Rock", 20.00, 12.00, "1979", 2, "Warner Records")
+album_repository.save(tusk)
+rumours = Album("Rumours", fleetwood_mac, "Folk Rock", 20.00, 12.00, "1977", 5, "Warner Records")
+album_repository.save(rumours)
+fleetwood_self_titled = Album("Fleetwood Mac", fleetwood_mac, "Soft Rock", 20.00, 12.00, "1975", 3, "Warner Records")
+album_repository.save(fleetwood_self_titled)
+
+# Frightened Rabbit Albums
+panic_attack = Album("Painting of a Panic Attack", frightened_rabbit, "Indie Rock", 21.99, 13.19, "2016", 6, "Atlantic Records")
+album_repository.save(panic_attack)
+pedestrian = Album("Pedestrian Verse", frightened_rabbit, "Indie Rock", 19.99, 11.99, "2013", 1, "Atlantic Records")
+album_repository.save(pedestrian)
+midnight = Album("Midnight Organ Fight", frightened_rabbit, "Indie Rock", 22.99, 13.79, "2008", 0, "Fat Cat Records")
+album_repository.save(midnight)
+
+# Hozier Albums
+wasteland = Album("Wasteland, Baby!", hozier, "Soul", 24.99, 14.99, "2019", 3, "Island Records")
+album_repository.save(wasteland)
+hozier_self_titled = Album("Hozier", hozier, "Folk Rock", 24.99, 14.99, "2014", 2, "Island Records")
+album_repository.save(hozier_self_titled)
+
+
+# Janelle Monáe Album
+dirty_computer = Album("Dirty Computer", janelle, "Funk/ R&B", 21.99, 13.19, "2018", 1, "Atlantic Records")
+album_repository.save(dirty_computer)
+
+# Leonard Cohen Albums
+thanks_for_the_dance = Album("Thanks for the Dance", leonard_cohen, "Folk Rock", 20.00, 12.00, "2019", 5, "Columbia Records")
+album_repository.save(thanks_for_the_dance)
+darker = Album("You Want it Darker", leonard_cohen, "Folk Rock", 20.00, 12.00, "2016", 9, "Columbia Records")
+album_repository.save(darker)
+future = Album("The Future", leonard_cohen, "Soft Rock", 20.00, 12.00, "1992", 3, "Columbia Records")
+album_repository.save(future)
+your_man = Album("I'm Your Man", leonard_cohen, "Soft Rock", 20.00, 12.00, "1988", 0, "Columbia Records")
+album_repository.save(your_man)
+various_positions = Album("Various Positions", leonard_cohen, "Folk", 20.00, 12.00, "1985", 2, "Columbia Records")
+album_repository.save(various_positions)
+love_and_hate = Album("Songs of Love and Hate", leonard_cohen, "Folk", 20.00, 12.00, "1971", 8, "Columbia Records")
+album_repository.save(love_and_hate)
+from_a_room = Album("Songs from a Room", leonard_cohen, "Folk", 20.00, 12.00, "1969", 2,"Columbia Records")
+album_repository.save(from_a_room)
+songs_of = Album("Songs of Leonard Cohen", leonard_cohen, "Folk", 20.00, 12.00, "1967", 7, "Columbia Records")
+album_repository.save(songs_of)
+
+# Lizzo Album
+love_you = Album("Cuz I Love You", lizzo, "Soul/ Hip-Hop", 23.99, 14.39, "2019", 5, "Atlantic Records")
+album_repository.save(love_you)
+
+# Maggie Rogers Album
+past_life = Album("Heard it in a Past Life", maggie_rogers, "Folk Pop", 19.99, 11.99, "2019", 3, "Capitol Records")
+album_repository.save(past_life)
+
+
+# Paramore Albums
+after_laughter = Album("After Laughter", paramore, "Pop Rock", 17.99, 10.79, "2017", 4, "Fueled By Ramen")
+album_repository.save(after_laughter)
+paramore_self_titled = Album("Paramore", paramore, "Pop Rock", 17.99, 10.79, "2013", 0, "Fueled By Ramen")
+album_repository.save(paramore_self_titled)
+brand_new_eyes = Album("Brand New Eyes", paramore, "Pop Rock", 17.99, 10.79, "2009", 2, "Fueled By Ramen")
+album_repository.save(brand_new_eyes)
+riot = Album("Riot!", paramore, "Alt-Rock", 17.99, 10.79, "2007", 1, "Fueled By Ramen")
+album_repository.save(riot)
+falling = Album("All We Know is Falling", paramore, "Alt-Rock", 17.99, 10.79, "2005", 1, "Fueled By Ramen")
+album_repository.save(falling)
+
+# Phoebe Bridgers Albums
+punisher = Album("Punisher", phoebe_bridgers, "Indie Rock", 21.99, 13.19, "2020", 6, "Dead Oceans")
+album_repository.save(punisher)
+stranger = Album("Stranger in the Alps", phoebe_bridgers, "Indie Rock", 21.99, 13.19, "2017", 5, "Dead Oceans")
+album_repository.save(stranger)
+
+# Sara Bareilles Albums
+chaos =  Album("Amidst the Chaos", sara, "Pop", 21.99, 13.19, "2019", 3, "Epic")
+album_repository.save(chaos)
+blessed_unrest = Album("The Blessed Unrest", sara, "Pop", 21.99, 13.19, "2013", 2, "Epic")
+album_repository.save(blessed_unrest)
+kaleidoscope = Album("Kaleidoscope Heart", sara, "Pop", 21.99, 13.19, "2010", 1, "Epic")
+album_repository.save(kaleidoscope)
+
+# Tallest Man on Earth Album
+
+fever_dream = Album("I Love You. It's a Fever Dream.", tallest_man, "Folk", 17.99, 10.79, "2019", 2, "Dead Oceans")
+album_repository.save(fever_dream)
 
 
 
-# # LABELS
+pdb.set_trace()
+
+
+
+
+# # LABELS - class and table removed for now?
 # fourteenth = Label("14th Floor (Warner)")
 # label_repository.save(fourteenth)
 # atlantic = Label("Atlantic Records")
@@ -70,106 +186,6 @@ artist_repository.save(tallest_man)
 # warner = Label("Warner Records")
 # label_repository.save(warner)
 
-
-
-
-# ALBUMS
-
-# Biffy Clyro Albums
-
-endings = Album("A Celebration of Endings", biffy, "Alternative Rock", 24.99, 14.99, "2020", 7, "14th Floor")
-album_repository.save(endings)
-ellipsis = Album("Ellipsis", biffy, "Alternative Rock", 19.99, 11.99, "2016", 8, "14th Floor")
-album_repository.save(ellipsis)
-opposites = Album("Opposites", biffy, "Alternative Rock", 22.99, 13.79, "2013", 9, "14th Floor")
-album_repository.save(opposites)
-revolutions = Album("Only Revolutions", biffy, "Alternative Rock", 19.99, 11.99, "2009", 5, "14th Floor")
-album_repository.save(revolutions)
-puzzle = Album("Puzzle", biffy, "Alternative Rock", 27.99, 16.79, "2007", 3, "14th Floor")
-album_repository.save(puzzle)
-
-# Dire Straits Albums
-brothers = Album("Brothers in Arms", dire_straits, "Rock", 25.99, 15.59, "1985", 6, "Vertigo")
-album_repository.save(brothers)
-making_movies = Album("Making Movies", dire_straits, "Rock", 24.99, 14.99, "1980", 2, "Vertigo")
-album_repository.save(making_movies)
-
-# Fleetwood Mac Albums 
-tango = Album("Tango in the Night", fleetwood_mac, "Pop Rock", 20.00, 12.00, "1987", 8, "Warner Records")
-album_repository.save(tango)
-mirage = Album("Mirage", fleetwood_mac, "Soft Rock", 20.00, 12.00, "1982", 0, "Warner Records")
-album_repository.save(mirage)
-tusk = Album("Tusk", fleetwood_mac, "Rock", 20.00, 12.00, "1979", 2, "Warner Records")
-album_repository.save(tusk)
-rumours = Album("Rumours", fleetwood_mac, "Folk Rock", 20.00, 12.00, "1977", 8, "Warner Records")
-album_repository.save(rumours)
-fleetwood_self_titled = Album("Fleetwood Mac", fleetwood_mac, "Soft Rock", 20.00, 12.00, "1975", 3, "Warner Records")
-album_repository.save(fleetwood_self_titled)
-
-# Frightened Rabbit Albums
-panic_attack = Album("Painting of a Panic Attack", frightened_rabbit, "Indie Rock", 21.99, 13.19, "2016", 15, "Atlantic Records")
-album_repository.save(panic_attack)
-pedestrian = Album("Pedestrian Verse", frightened_rabbit, "Indie Rock", 19.99, 11.99, "2013", 1, "Atlantic Records")
-album_repository.save(pedestrian)
-midnight = Album("Midnight Organ Fight", frightened_rabbit, "Indie Rock", 22.99, 13.79, "2008", 0, "Fat Cat Records")
-album_repository.save(midnight)
-
-# Hozier Albums
-wasteland = Album("Wasteland, Baby!", hozier, "Soul", 24.99, 14.99, "2019", 3, "Island Records")
-album_repository.save(wasteland)
-hozier_self_titled = Album("Hozier", hozier, "Folk Rock", 24.99, 14.99, "2014", 2, "Island Records")
-album_repository.save(hozier_self_titled)
-
-
-# Leonard Cohen Albums
-thanks_for_the_dance = Album("Thanks for the Dance", leonard_cohen, "Folk Rock", 20.00, 12.00, "2019", 5, "Columbia Records")
-album_repository.save(thanks_for_the_dance)
-darker = Album("You Want it Darker", leonard_cohen, "Folk Rock", 20.00, 12.00, "2016", 10, "Columbia Records")
-album_repository.save(darker)
-future = Album("The Future", leonard_cohen, "Soft Rock", 20.00, 12.00, "1992", 3, "Columbia Records")
-album_repository.save(future)
-your_man = Album("I'm Your Man", leonard_cohen, "Soft Rock", 20.00, 12.00, "1988", 0, "Columbia Records")
-album_repository.save(your_man)
-various_positions = Album("Various Positions", leonard_cohen, "Folk", 20.00, 12.00, "1985", 2, "Columbia Records")
-album_repository.save(various_positions)
-love_and_hate = Album("Songs of Love and Hate", leonard_cohen, "Folk", 20.00, 12.00, "1971", 9, "Columbia Records")
-album_repository.save(love_and_hate)
-from_a_room = Album("Songs from a Room", leonard_cohen, "Folk", 20.00, 12.00, "1969", 2,"Columbia Records")
-album_repository.save(from_a_room)
-songs_of = Album("Songs of Leonard Cohen", leonard_cohen, "Folk", 20.00, 12.00, "1967", 7, "Columbia Records")
-album_repository.save(songs_of)
-
-# Maggie Rogers Album
-past_life = Album("Heard it in a Past Life", maggie_rogers, "Folk Pop", 19.99, 11.99, "2019", 3, "Capitol Records")
-album_repository.save(past_life)
-
-
-# Paramore Albums
-after_laughter = Album("After Laughter", paramore, "Pop Rock", 17.99, 10.79, "2017", 6, "Fueled By Ramen")
-album_repository.save(after_laughter)
-paramore_self_titled = Album("Paramore", paramore, "Pop Rock", 17.99, 10.79, "2013", 4, "Fueled By Ramen")
-album_repository.save(paramore_self_titled)
-brand_new_eyes = Album("Brand New Eyes", paramore, "Pop Rock", 17.99, 10.79, "2009", 2, "Fueled By Ramen")
-album_repository.save(brand_new_eyes)
-riot = Album("Riot!", paramore, "Alt-Rock", 17.99, 10.79, "2007", 1, "Fueled By Ramen")
-album_repository.save(riot)
-falling = Album("All We Know is Falling", paramore, "Alt-Rock", 17.99, 10.79, "2005", 1, "Fueled By Ramen")
-album_repository.save(falling)
-
-# Phoebe Bridgers Albums
-punisher = Album("Punisher", phoebe_bridgers, "Indie Rock", 21.99, 13.19, "2020", 6, "Dead Oceans")
-album_repository.save(punisher)
-stranger = Album("Stranger in the Alps", phoebe_bridgers, "Indie Rock", 21.99, 13.19, "2017", 5, "Dead Oceans")
-album_repository.save(stranger)
-
-# Tallest Man on Earth Album
-
-fever_dream = Album("I Love You. It's a Fever Dream.", tallest_man, "Folk", 17.99, 10.79, "2019", 2, "Dead Oceans")
-album_repository.save(fever_dream)
-
-
-
-pdb.set_trace()
 
 
 

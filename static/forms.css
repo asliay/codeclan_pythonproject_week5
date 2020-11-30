@@ -1,0 +1,9 @@
+/* FORMS */
+
+input, select {
+    width: 35%;
+    padding: 15px;
+    margin: 10px;
+    outline: none;
+    box-sizing: border-box;
+  }

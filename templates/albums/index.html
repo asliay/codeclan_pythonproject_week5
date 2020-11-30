@@ -1,35 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-<a href="/albums/new">Add New Album to Stock</a>
+<a class="add-link" href="/albums/new">Add New Album to Stock</a>
 
 <h1>Albums</h1>
 
 <section id="album-entry">
     {% for album in albums|sort(attribute="artist.name") %}
         
-        <p>Album Title: <a class="album-title" href="/albums/{{album.id}}">{{ album.title }}</p></a>
-        <p>Artist: <a class="album-artist" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p>
+        <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="album-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
+        <p></p>
         <p>Genre: {{ album.genre }}</p>
-        <p>Record Label: {{ album.label }}</a></p>
+        <p>Label: {{ album.label }}</a></p>
         <p>Release Year: {{ album.release_year }}</p>
         
         <p>R.R.P: £{{ '%0.2f'| format(album.price) }}</p>
         <p>Cost Price: £{{ '%0.2f'| format(album.cost_price) }}</p>
-        <p>Markup = {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</p>
+        <p>Markup: {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</p>
 
         {% if album.stock >= 3 %}
-            <p>Stock Level = {{ album.stock }}</p>
+            <p>Quantity in Hand: {{ album.stock }}</p>
         {% elif album.stock == 0 %}
             <p class="no-stock">OUT OF STOCK ❌ </p>
         {% elif album.stock < 3 %}
             <p>Stock Level = {{ album.stock }}</p> <p class="stock-warning"> WARNING: LOW STOCK</p>
         {% endif %}
        
-        <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
-            <button class="trash-button">DELETE STOCK RECORD</button>
-        </form>
-        
+        <div class="buttons-container">
+            <form class="edit-form" action="/albums/{{album.id}}/edit">
+                <button class="edit-button">EDIT</button>
+            </form>
+            <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
+                <button class="trash-button">DELETE</button>
+            </form>
+            </div>
         <hr>
 {% endfor %}
 </section>

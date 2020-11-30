@@ -2,18 +2,17 @@
 
 {% block content %}
 
-<a href="/artists/new">Add New Artist to Inventory</a>
+<a class="add-link" href="/artists/new">Add New Artist to Inventory</a>
+
 <h1>Artists</h1>
 
-<table>
-    <tr>
-        <th>Name</th> 
-    </tr>
     {% for artist in artists|sort(attribute="name") %}
-    <tr>
-        <td><a href="/artists/{{artist.id}}">{{ artist.name }}</a></td>
-    </tr>
-     
+        <ul>
+            <li class="artist-entry"><a class="artist-link" href="/artists/{{artist.id}}">{{ artist.name }}</li>
+        </ul>
+
+
+
     {% endfor %}
     </table>
 
