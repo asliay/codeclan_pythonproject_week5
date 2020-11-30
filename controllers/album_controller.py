@@ -79,3 +79,5 @@ def update_album(id):
 def delete_album(id):
     album_repository.delete(id)
     return redirect("/albums")
+
+

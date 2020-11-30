@@ -9,7 +9,7 @@
     {% for album in albums|sort(attribute="artist.name") %}
         
     <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
-    <h3>Record Label: <a class="label-link2" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
+    <h3>Record Label: <a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
     <div class="album-container">
         <table>
             <tr>
@@ -36,7 +36,9 @@
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
     </div>
-    
+    <!-- <form action="/albums/{{album.id}}/order">
+        <button>ORDER STOCK</button>
+    </form> -->
         <div class="buttons-container">
             <form class="edit-form" action="/albums/{{album.id}}/edit">
                 <button class="edit-button">EDIT</button>

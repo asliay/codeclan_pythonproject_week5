@@ -42,10 +42,11 @@ def delete_all():
     sql = "DELETE FROM labels"
     run_sql(sql)
 
-
-
-# UPDATE
-
+# DELETE by id
+def delete(id):
+    sql = "DELETE FROM artists WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 # Show all albums by a specific label
 def albums_by_label(label):
