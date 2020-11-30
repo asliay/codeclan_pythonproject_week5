@@ -14,9 +14,9 @@
     {% if album.stock|int >= 3 %}
         <p>Quantity in Hand: {{ album.stock }}</p>
     {% elif album.stock|int == 0 %}
-        <p class="no-stock">OUT OF STOCK ❌ </p>
+        <p class="no-stock"><span>OUT OF STOCK</p></span>
     {% elif album.stock|int < 3 %}
-        <p>Stock Level = {{ album.stock }}</p> <p class="stock-warning"> WARNING: LOW STOCK</p>
+        <p>Stock Level = {{ album.stock }}</p> <p class="stock-warning"><span> WARNING: LOW STOCK</span></p>
     {% endif %}
     <div class="buttons-container">
         <form class="edit-form" action="/albums/{{album.id}}/edit">

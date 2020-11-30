@@ -78,17 +78,23 @@ hr {
 }
 
 .no-stock {
-  color: red;
-  background-color: white;
-  width: 150px;
+  color: white;
+}
+
+.no-stock span {
   padding: 5px;
+  background-color: red;
 }
 
 .stock-warning {
-  color: #E57C04;
-  background-color: white;
-  width: 180px;
+  color: white;
+  width: 280px;
   padding: 5px;
+}
+
+.stock-warning > span {
+  padding: 5px;
+  background-color: #E57C04;
 }
 
 h1 {

@@ -27,9 +27,9 @@
         {% if album.stock >= 3 %}
             <p>Quantity in Hand: {{ album.stock }}</p>
         {% elif album.stock == 0 %}
-            <p class="no-stock">OUT OF STOCK ❌ </p>
+            <p class="no-stock"><span>OUT OF STOCK</span></p>
         {% elif album.stock < 3 %}
-            <p>Stock Level = {{ album.stock }}</p> <p class="stock-warning"> WARNING: LOW STOCK</p>
+            <p>Stock Level = {{ album.stock }}</p> <p class="stock-warning"><span> WARNING: LOW STOCK</span></p>
         {% endif %}
        
         <div class="buttons-container">
