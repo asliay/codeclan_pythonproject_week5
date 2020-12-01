@@ -92,5 +92,7 @@ def order_stock(id):
 # 'Sell's stock (-1 to stock count) on specific album and redirects to show album page
 @albums_blueprint.route("/albums/<id>/sell", methods=['POST'])
 def sell_stock(id):
-    album_repository.decrease_stock(id)
+    album = album_repository.select(id)
+    if album.stock > 0:
+        album_repository.decrease_stock(id)
     return redirect(f"/albums/{id}")
