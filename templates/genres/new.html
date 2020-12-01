@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<form action="/genres" method="post">
+    <div>
+        <input type="text"
+               name="genre-category"
+               id="genre-category"
+               placeholder="New Genre"
+               required
+               autofocus>
+    </div>
+    <button class="stock-button">Add Genre to Database</button>
+</form>
+
+
+
+
+{% endblock content %}
