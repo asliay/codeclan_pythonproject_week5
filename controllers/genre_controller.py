@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, render_template
+from flask import Flask, Blueprint, render_template, request, redirect
 from models.genre import Genre
 import repositories.genre_repository as genre_repository
 
@@ -14,3 +14,11 @@ def genres():
 @genres_blueprint.route("/genres/new", methods=['GET'])
 def new_genre():
     return render_template("genres/new.html")
+
+# Creates new Genre and updates Genre list
+@genres_blueprint.route("/genres", methods=['POST'])
+def create_genre():
+    category = request.form['genre-category']
+    genre = Genre(category)
+    genre_repository.save(genre)
+    return redirect("/genres")
