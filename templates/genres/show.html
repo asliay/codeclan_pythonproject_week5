@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section>
+
+    {% if albums|length == 0 %}
+        No albums of this genre currently in stock.
+    {% endif %}
+
+    {% for album in albums %}
     
-    <span><p class="album-title"> {{ album.title }}</p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
-    <h3>Record Label: <p class="label-name"><a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></p></h3>
+    <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist">{{ album.artist.name }}</p></span>
+    <h3>Record Label: <a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
     <div class="album-container">
         <table>
-            <tr>   
-                <td><p class="table-label">Genre:</p> {{ album.genre.category }}</td>
+            <tr> 
+                <td><p class="table-label">Genre:</p> {{ genre.category }}</td>
                 <td><p class="table-label">Release Year:</p> {{ album.release_year }}</td>
                 {% if album.stock >= 3 %}
                 <td><p class="table-label">Qty. in Hand:</p> {{ album.stock }}</td>
@@ -18,17 +23,16 @@
                 <td class="stock-warning"><span> WARNING: LOW STOCK ({{album.stock}})</span></p></td>
             {% endif %}
                 </td>
+                
             </tr>
             <tr>
                 <td><p class="table-label">R.R.P:</p> £{{ '%0.2f'| format(album.price) }}</td>
                 <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
-                <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
+                <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td> 
             </tr>
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
     </div>
-
-    
     <div class="buttons-container">
         <form action="/albums/{{album.id}}/order", method="POST">
             <button class="order-btn">ORDER STOCK</button>
@@ -43,6 +47,8 @@
             <button class="trash-button">DELETE</button>
         </form>
     </div>
+        <hr>
+    
+    {% endfor %}    
 </section>
-
 {% endblock content %}

@@ -26,4 +26,6 @@ def create_genre():
 # Albums of a specific genre
 @genres_blueprint.route("/genres/<id>")
 def genre_albums(id):
-    
+    genre = genre_repository.select(id)
+    genres_albums = genre_repository.albums_by_genre(genre)
+    return render_template("genres/show.html", genre = genre, albums = genres_albums)
