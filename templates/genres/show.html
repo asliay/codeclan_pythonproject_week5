@@ -4,9 +4,9 @@
 
     {% if albums|length == 0 %}
         No albums of this genre currently in stock.
-    {% endif %}
-
-    {% for album in albums %}
+    {% else %}
+    <h3>Albums categorised under {{genre.category}}:</h3>
+    {% for album in albums | sort(attribute="artist.name") %}
     
     <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist">{{ album.artist.name }}</p></span>
     <h3>Record Label: <a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
@@ -49,6 +49,7 @@
     </div>
         <hr>
     
-    {% endfor %}    
+    {% endfor %} 
+    {% endif %}   
 </section>
 {% endblock content %}

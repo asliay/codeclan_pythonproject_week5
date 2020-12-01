@@ -3,6 +3,7 @@ from models.album import Album
 import repositories.album_repository as album_repository
 import repositories.artist_repository as artist_repository
 import repositories.label_repository as label_repository
+import repositories.genre_repository as genre_repository
 
 albums_blueprint = Blueprint("albums", __name__)
 
@@ -18,7 +19,8 @@ def albums():
 def new_album():
     artists = artist_repository.select_all()
     labels = label_repository.select_all()
-    return render_template("albums/new.html", artists = artists, labels = labels)
+    genres = genre_repository.select_all()
+    return render_template("albums/new.html", artists = artists, labels = labels, genres = genres)
 
 # CREATE
 # Add new album to stock catalogue
@@ -54,8 +56,9 @@ def show_album(id):
 def edit_album(id):
     album = album_repository.select(id)
     artists = artist_repository.select_all()
+    genres = genre_repository.select_all()
     labels = label_repository.select_all()
-    return render_template("albums/edit.html", album = album, artists = artists, labels = labels)
+    return render_template("albums/edit.html", album = album, artists = artists, genres = genres, labels = labels)
 
 
 # UPDATE - 
@@ -65,7 +68,7 @@ def edit_album(id):
 def update_album(id):
     title = request.form['title']
     artist = artist_repository.select(request.form['artist_id'])
-    genre = request.form['genre']
+    genre = genre_repository.select(request.form['genre_id'])
     price = float(request.form['price'])
     cost_price = float(request.form['cost-price'])
     release_year = request.form['release-year']

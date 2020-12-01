@@ -12,7 +12,7 @@
     </div>
     <div> 
         <select id="artist" name="artist_id">
-            {% for artist in artists %}
+            {% for artist in artists| sort(attribute="name") %}
                 <option value="{{ artist.id }}"
             {% if album.artist.id == artist.id %} selected="selected"{% endif %}>
                 {{ artist.name }}
@@ -21,11 +21,15 @@
         </select>
     </div>
     <div>
-        <input type="text"
-           id="genre"
-           name="genre"
-           value="{{album.genre}}"
-           required>
+        <select name="genre_id" id="genre_id">
+            <option value="">Choose Genre</option>
+            {% for genre in genres|sort(attribute="category") %}
+                <option value="{{ album.genre.id }}"
+                {% if album.genre.id == genre.id %} selected="selected:"{% endif %}>
+                {{ genre.category }}
+            </option>
+            {% endfor %}
+        </select>
     </div>
     <div>
         <input type="number"

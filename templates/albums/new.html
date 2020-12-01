@@ -20,11 +20,12 @@
         </select>
     </div>
     <div>
-        <input type="text"
-               name="genre"
-               id="genre"
-               placeholder="Genre"
-               required>
+        <select name="genre-id" id="genre_id">
+            <option value="">Choose Genre</option>
+            {% for genre in genres|sort(attribute="category") %}
+                <option value="{{ genre.id }}">{{ genre.category }}</option>
+            {% endfor %}
+        </select>
     </div>
     <div>
         <input type="number"

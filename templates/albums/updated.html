@@ -10,7 +10,7 @@
     <div class="album-container">
         <table>
             <tr>
-                <td><p class="table-label">Genre:</p> {{ genre }}</td>
+                <td><p class="table-label">Genre:</p><a class="genre-link" href="/genres/{{genre.id}}">{{ genre.category }}</a></td>
                 <td><p class="table-label">Release Year:</p> {{ release_year }}</td>
                 {% if stock >= 3 %}
                 <td><p class="table-label">Qty. in Hand:</p> {{ stock }}</td>
