@@ -14,10 +14,10 @@
     <div class="album-container">
         <table>
             <tr>
-                <td>Genre: {{ album.genre }}</td>
-                <td>Release Year: {{ album.release_year }}</td>
+                <td><p class="table-label">Genre:</p> {{ album.genre }}</td>
+                <td><p class="table-label">Release Year:</p> {{ album.release_year }}</td>
                 {% if album.stock >= 3 %}
-                <td>Qty. in Hand: {{ album.stock }}</td>
+                <td><p class="table-label">Qty. in Hand:</p> {{ album.stock }}</td>
             {% elif album.stock == 0 %}
                 <td class="no-stock"><span>OUT OF STOCK</span></td>
             {% elif album.stock < 3 %}
@@ -26,9 +26,9 @@
                 </td>    
             </tr>
             <tr>
-                <td>R.R.P: £{{ '%0.2f'| format(album.price) }}</td>
-                <td>Cost Price: £{{ '%0.2f'| format(album.cost_price) }}</td>
-                <td>Markup: {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
+                <td><p class="table-label">R.R.P:</p> £{{ '%0.2f'| format(album.price) }}</td>
+                <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
+                <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
             </tr>
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">

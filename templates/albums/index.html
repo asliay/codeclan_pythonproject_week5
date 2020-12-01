@@ -35,15 +35,16 @@
 
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
     </div>
+    
     <form action="/albums/{{album.id}}/order", method="POST">
-        <button>ORDER STOCK</button>
+        <button class="order-btn">ORDER STOCK</button>
     </form>
         <div class="buttons-container">
             <form class="edit-form" action="/albums/{{album.id}}/edit">
-                <button class="edit-button">EDIT</button>
+                <button class="edit-btn">EDIT STOCK ENTRY</button>
             </form>
             <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
-                <button class="trash-button">DELETE</button>
+                <button class="trash-btn">DELETE STOCK ENTRY</button>
             </form>
             </div>
         <hr>
