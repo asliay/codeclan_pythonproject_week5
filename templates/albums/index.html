@@ -8,14 +8,16 @@
 <section>
     {% for album in albums|sort(attribute="artist.name") %}
         
-    <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
-
+    <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a>  - {{album.release_year}}</p></span>
+    <h3>Genre: <a class="genre-link" href="/genres/{{album.genre.id}}">{{ album.genre.category }}</a></p></h3>
     <h3>Record Label: <a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
     <div class="album-container">
         <table>
             <tr>
-                <td><p class="table-label">Genre:</p> <a class="genre-link" href="/genres/{{album.genre.id}}">{{ album.genre.category }}</a></td>
-                <td><p class="table-label">Release Year:</p>{{ album.release_year }}</td>
+                <td><p class="table-label">Retail Price:</p> £{{ '%0.2f'| format(album.price) }}</td>
+                <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
+            </tr>
+            <tr>
                 {% if album.stock >= 3 %}
                 <td><p class="table-label">Qty. in Hand:</p> {{ album.stock }}</td>
             {% elif album.stock == 0 %}
@@ -24,11 +26,7 @@
                 <td><p class="table-label">Qty. in Hand:</p><span class="stock-warning"> {{ album.stock }}</span></td>
             {% endif %}
                 </td> 
-            </tr>
-            <tr>
-                <td><p class="table-label">Retail Price:</p> £{{ '%0.2f'| format(album.price) }}</td>
-                <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
-
+                <td><p class="table-label">Sales:</p>{{album.sales_count}}</td>
                 {% if album.cost_price == 0 %}
                     <td><p class="table-label">Markup:</p> Free Stock</td>
                 {% elif (((album.price - album.cost_price) / album.cost_price) * 100) < 50 %}

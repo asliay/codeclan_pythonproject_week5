@@ -129,19 +129,16 @@ h3 {
   display: inline-block;
 }
 
-.genre-link {  
-  color: white;
-  text-decoration: underline;
-}
 
-.label-link {
+
+.label-link, .genre-link {
   font-size: 20px;
   text-decoration: underline;
   text-transform: capitalize;
   color: #13315C;
 }
 
-.label-name {
+.label-name, .genre-name {
   font-size: 20px;
   color: #13315C;
   text-transform: capitalize;
