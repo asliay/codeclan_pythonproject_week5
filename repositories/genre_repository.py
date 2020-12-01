@@ -5,6 +5,8 @@ from models.artist import Artist
 from models.label import Label
 from models.album import Album
 
+import repositories.artist_repository as artist_repository
+import repositories.label_repository as label_repository
 
 # SAVE 
 def save(genre):
@@ -40,4 +42,18 @@ def delete(id):
     sql = "DELETE FROM genres WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def albums_by_genre(genre):
+    albums = []
+
+    sql = "SELECT * FROM albums WHERE genre_id = %s"
+    values = [genre.id]
+    results = run_sql(sql,values)
+
+    for row in results:
+        artist = artist_repository.select(row['artist_id'])
+        label = label_repository.select(row['label_id'])
+        album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['id'])
+        albums.append(album)
+    return albums
     

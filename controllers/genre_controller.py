@@ -22,3 +22,8 @@ def create_genre():
     genre = Genre(category)
     genre_repository.save(genre)
     return redirect("/genres")
+
+# Albums of a specific genre
+@genres_blueprint.route("/genres/<id>")
+def genre_albums(id):
+    
