@@ -17,7 +17,7 @@ artist_repository.delete_all()
 genre_repository.delete_all()
 
 # ARTISTS - Populates Artists table
-various = Artist("Various")
+various = Artist("Various Artists")
 artist_repository.save(various)
 beyonce = Artist("Beyoncé")
 artist_repository.save(beyonce)
@@ -47,6 +47,10 @@ sara = Artist("Sara Bareilles")
 artist_repository.save(sara)
 tallest_man = Artist("The Tallest Man on Earth")
 artist_repository.save(tallest_man)
+dermot_kennedy = Artist("Dermot Kennedy")
+artist_repository.save(dermot_kennedy)
+rage = Artist("Rage Against the Machine")
+artist_repository.save(rage)
 
 # LABELS 
 fourteenth = Label("14th Floor (Warner)")
@@ -67,16 +71,13 @@ fueled_by_ramen = Label("Fueled By Ramen")
 label_repository.save(fueled_by_ramen)
 island = Label("Island Records")
 label_repository.save(island)
-sony = Label("Sony Music")
-label_repository.save(sony)
-universal = Label("Universal Music")
-label_repository.save(universal)
 vertigo = Label("Vertigo")
 label_repository.save(vertigo)
-virgin = Label("Virgin Records")
-label_repository.save(virgin)
 warner = Label("Warner Records")
 label_repository.save(warner)
+republic = Label("Republic Records")
+label_repository.save(republic)
+
 
 # GENRES
 alt_rock = Genre("Alternative Rock")
@@ -109,12 +110,17 @@ genre_repository.save(indie_rock)
 soul_hop = Genre("Soul/ Hip-Hop")
 genre_repository.save(soul_hop)
 
+hip_hop = Genre("Hip Hop")
+genre_repository.save(hip_hop)
+
 rb = Genre("R&B")
 genre_repository.save(rb)
 
 funk = Genre("Funk")
 genre_repository.save(funk)
 
+rap_metal = Genre("Rap Metal")
+genre_repository.save(rap_metal)
 
 
 # ALBUMS - Populates Albums table
@@ -261,8 +267,18 @@ album_repository.save(lemonade)
 beyonce_self_titled = Album("Beyoncé", beyonce, rb, 19.99, 11.99, "2013", "https://is2-ssl.mzstatic.com/image/thumb/Music6/v4/17/84/3a/17843a6d-1f2b-7e1e-a39f-3ff865110993/source/600x600bb.jpg", 4, columbia)
 album_repository.save(beyonce_self_titled)
 
+# Dermot Kennedy Album
 
+without_fear = Album("Without Fear", dermot_kennedy, folk_pop, 19.99, 11.99, "2019", "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/72/26/4d/72264d37-4ae0-a1d2-73e3-e5e3413845fe/source/600x600bb.jpg", 1, island)
+album_repository.save(without_fear)
 
+# Spider-Verse soundtrack
+spiderverse = Album("Spider-Man: Into the Spider-Verse", various, hip_hop, 19.99, 11.99, "2018", "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/36/9b/a2/369ba2e1-2dfc-6e2a-7065-4612af58fa0a/source/600x600bb.jpg", 2, republic)
+album_repository.save(spiderverse)
+
+# Rage Against the Machine album
+rage_self_titled = Album("Rage Against the Machine", rage, rap_metal, 21.99, 13.19, "1992", "https://is3-ssl.mzstatic.com/image/thumb/Music113/v4/c8/2c/46/c82c46dc-eab8-4b62-1381-c2fae3d9b7a0/source/600x600bb.jpg", 1, epic)
+album_repository.save(rage_self_titled)
 
 
 pdb.set_trace()
