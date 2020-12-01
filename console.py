@@ -72,6 +72,9 @@ label_repository.save(virgin)
 warner = Label("Warner Records")
 label_repository.save(warner)
 
+# GENRES
+alt_rock = Genre("Alternative Rock")
+
 
 # ALBUMS - Populates Albums table
 
