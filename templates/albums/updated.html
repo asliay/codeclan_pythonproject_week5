@@ -12,12 +12,12 @@
             <tr>
                 <td><p class="table-label">Genre:</p><a class="genre-link" href="/genres/{{genre.id}}">{{ genre.category }}</a></td>
                 <td><p class="table-label">Release Year:</p> {{ release_year }}</td>
-                {% if stock >= 3 %}
+                {% if album.stock >= 3 %}
                 <td><p class="table-label">Qty. in Hand:</p> {{ stock }}</td>
             {% elif stock == 0 %}
-                <td class="no-stock"><span>OUT OF STOCK</p></td>
+                <td class="no-stock"><span>OUT OF STOCK</span></td>
             {% elif stock < 3 %}
-                <td class="stock-warning"><span>LOW STOCK: {{stock}}</span></p></td>
+                <td><p class="table-label">Qty. in Hand:</p><span class="stock-warning"> {{ stock }}</span></td>
             {% endif %}
                 </td>  
             </tr>

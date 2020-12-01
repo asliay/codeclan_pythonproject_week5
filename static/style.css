@@ -95,9 +95,12 @@ hr {
 .stock-warning {
   color: white;
   width: 280px;
+  background-color: #E57C04;
+  padding: 5px;
 }
 
 .stock-warning span {
+  
   padding: 5px;
   background-color: #E57C04;
 }
@@ -107,7 +110,7 @@ h1 {
 }
 
 h3 { 
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: ;
 }
 
 .album-title, .album-artist{

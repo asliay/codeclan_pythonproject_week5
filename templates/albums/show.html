@@ -19,7 +19,7 @@
             {% elif album.stock == 0 %}
                 <td class="no-stock"><span>OUT OF STOCK</span></td>
             {% elif album.stock < 3 %}
-                <td class="stock-warning"><span>LOW STOCK: {{album.stock}}</span></p></td>
+                <td><p class="table-label">Qty. in Hand:</p><span class="stock-warning"> {{ album.stock }}</span></td>
             {% endif %}
                 </td>
             </tr>
@@ -28,14 +28,14 @@
                 <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
                 
                 {% if album.cost_price == 0 %}
-                <td><p class="table-label">Markup:</p> Free Stock</td>
+                    <td><p class="table-label">Markup:</p> Free Stock</td>
                 {% elif (((album.price - album.cost_price) / album.cost_price) * 100) < 50 %}
-                <td class="stock-warning"><span>LOW MARKUP: ({{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%)</span></p></td>
+                <td><p class="table-label">MARKUP: </p><span class="stock-warning">{{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</span></td>
                 {% else %}
                 <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
-            
-            
-            {% endif %}
+                
+                
+                {% endif %}
             </tr>
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">

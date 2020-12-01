@@ -15,13 +15,13 @@
         <table>
             <tr>
                 <td><p class="table-label">Genre:</p> <a class="genre-link" href="/genres/{{album.genre.id}}">{{ album.genre.category }}</a></td>
-                <td><p class="table-label">Release Year:</p> {{ album.release_year }}</td>
+                <td><p class="table-label">Release Year:</p>{{ album.release_year }}</td>
                 {% if album.stock >= 3 %}
                 <td><p class="table-label">Qty. in Hand:</p> {{ album.stock }}</td>
             {% elif album.stock == 0 %}
                 <td class="no-stock"><span>OUT OF STOCK</span></td>
             {% elif album.stock < 3 %}
-                <td class="stock-warning"><span>LOW STOCK: {{album.stock}}</span></p></td>
+                <td><p class="table-label">Qty. in Hand:</p><span class="stock-warning"> {{ album.stock }}</span></td>
             {% endif %}
                 </td> 
             </tr>
@@ -32,7 +32,7 @@
                 {% if album.cost_price == 0 %}
                     <td><p class="table-label">Markup:</p> Free Stock</td>
                 {% elif (((album.price - album.cost_price) / album.cost_price) * 100) < 50 %}
-                <td class="stock-warning"><span>LOW MARKUP: ({{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%)</span></p></td>
+                <td><p class="table-label">MARKUP: </p><span class="stock-warning">{{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</span></td>
                 {% else %}
                 <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
                 
