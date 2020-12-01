@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<a class="add-link" href="/genres/new">Add New Genre to Database</a>
+
+<h1>Genres</h1>
+
+    {% for genre in genres|sort(attribute="category") %}
+        <ul>
+            <li class="genre-entry"><a class="list-link" href="/genres/{{genre.id}}">{{ genre.category }}</li>
+        </ul>
+        
+    {% endfor %}
+
+    
+{% endblock content %}
+
+

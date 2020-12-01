@@ -3,7 +3,7 @@ from flask import Flask, render_template
 from controllers.album_controller import albums_blueprint
 from controllers.artist_controller import artists_blueprint
 from controllers.label_controller import labels_blueprint
-from controller.genre_controller import genres_blueprint
+from controllers.genre_controller import genres_blueprint
 
 app = Flask(__name__)
 

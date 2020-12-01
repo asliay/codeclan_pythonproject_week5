@@ -33,7 +33,7 @@ def select(id):
     return genre
 
 def delete_all():
-    sql = "DELETE * FROM genres"
+    sql = "DELETE FROM genres"
     run_sql(sql)
 
 def delete(id):
