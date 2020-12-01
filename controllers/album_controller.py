@@ -86,6 +86,5 @@ def delete_album(id):
 # Orders stock -- work in progress
 @albums_blueprint.route("/albums/<id>/order", methods=['POST'])
 def order_stock(id):
-    album = album_repository.select(id)
-    album_repository.update_stock(album)
-    return redirect("/albums")
+    album_repository.increase_stock(id)
+    return redirect(f"/albums/{id}")
