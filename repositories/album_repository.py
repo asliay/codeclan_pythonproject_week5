@@ -60,7 +60,6 @@ def update(album):
 
 # Order Stock
 def update_stock(id):
-    # function that adds 2 to stock count of a particular album ??
-    sql = "UPDATE albums SET stock = stock + 2 WHERE id = %s"
-    values = [id]
-    run_sql(sql, values)
+    # function that adds 1 to stock count of a particular album ??
+    sql = "UPDATE albums SET stock = stock + 1"
+    run_sql(sql)
