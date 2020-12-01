@@ -30,7 +30,6 @@ def create_label():
 @labels_blueprint.route("/labels/<id>")
 def label_albums(id):
     label = label_repository.select(id)
-    artist = artist_repository.select(id)
     labels_albums = label_repository.albums_by_label(label)
-    return render_template("labels/show.html", artist = artist, label = label, albums = labels_albums)
+    return render_template("labels/show.html", label = label, albums = labels_albums)
     

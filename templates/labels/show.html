@@ -10,7 +10,7 @@
     {% for album in albums| sort(attribute="artist.name") %}
 
 <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
-    <h3>Record Label: {{ album.label.name }}</h3>
+    <h3>Record Label: <p class="label-name"> {{ album.label.name }}</p></h3>
     <div class="album-container">
         <table>
             <tr>
@@ -33,14 +33,20 @@
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
     </div>
-<div class="buttons-container">
-    <form class="edit-form" action="/albums/{{album.id}}/edit">
-        <button class="edit-button">EDIT</button>
-    </form>
-    <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
-        <button class="trash-button">DELETE</button>
-    </form>
-</div>
+    <div class="buttons-container">
+        <form action="/albums/{{album.id}}/order", method="POST">
+            <button class="order-btn">ORDER STOCK</button>
+        </form>
+        <form action="/albums/{{album.id}}/sell", method="POST">
+            <button class="order-btn">SELL STOCK</button>
+        </form>
+        <form class="edit-form" action="/albums/{{album.id}}/edit">
+            <button class="edit-button">EDIT</button>
+        </form>
+        <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
+            <button class="trash-button">DELETE</button>
+        </form>
+    </div>
 <hr>
 
 {% endfor %}

@@ -105,7 +105,7 @@ h1 {
   text-transform: uppercase;
 }
 
-.album-title, .album-artist, .album-link, .artist-link{
+.album-title, .album-artist{
   font-size: 30px;
   text-decoration: none;
   text-transform: uppercase;
@@ -113,12 +113,26 @@ h1 {
   display: inline-block;
 }
 
+.album-link, .artist-link {
+  font-size: 30px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #13315C;
+  display: inline-block;
+}
 
 .label-link {
   font-size: 20px;
-  text-decoration: none;
+  text-decoration: underline;
   text-transform: capitalize;
   color: #13315C;
+}
+
+.label-name {
+  font-size: 20px;
+  color: #13315C;
+  text-transform: capitalize;
+  display: inline-block;
 }
 
 .add-link {
