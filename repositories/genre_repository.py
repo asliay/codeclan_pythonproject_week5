@@ -31,3 +31,13 @@ def select(id):
     if result is not None:
         genre = Genre(result['category'], result['id'])
     return genre
+
+def delete_all():
+    sql = "DELETE * FROM genres"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM genres WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+    
