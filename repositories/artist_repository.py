@@ -5,6 +5,7 @@ from models.label import Label
 from models.album import Album
 
 import repositories.label_repository as label_repository
+import repositories.genre_repository as genre_repository
 
 # SAVE
 def save(artist):
@@ -66,6 +67,7 @@ def albums_by_artist(artist):
 
     for row in results:
         label = label_repository.select(row['label_id'])
-        album = Album(row['title'], artist, row['genre'], row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['id'])
+        genre = genre_repository.select(row['genre_id'])
+        album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['id'])
         albums.append(album)
     return albums

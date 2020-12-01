@@ -2,7 +2,7 @@ import pdb
 from models.album import Album
 from models.artist import Artist
 from models.label import Label
-from models.label import Genre
+from models.genre import Genre
 
 
 import repositories.artist_repository as artist_repository
@@ -105,7 +105,7 @@ indie_rock = Genre("Indie Rock")
 genre_repository.save(indie_rock)
 
 soul_hop = Genre("Soul/ Hip-Hop")
-genre_repository.save(soul)
+genre_repository.save(soul_hop)
 
 rb = Genre("R&B")
 genre_repository.save(rb)
