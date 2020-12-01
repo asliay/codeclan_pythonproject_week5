@@ -83,8 +83,14 @@ def delete_album(id):
     album_repository.delete(id)
     return redirect("/albums")
 
-# Orders stock -- work in progress
+# 'Orders' stock (+1 to stock count) on specific album and redirects to show album page
 @albums_blueprint.route("/albums/<id>/order", methods=['POST'])
 def order_stock(id):
     album_repository.increase_stock(id)
+    return redirect(f"/albums/{id}")
+
+# 'Sell's stock (-1 to stock count) on specific album and redirects to show album page
+@albums_blueprint.route("/albums/<id>/sell", methods=['POST'])
+def sell_stock(id):
+    album_repository.decrease_stock(id)
     return redirect(f"/albums/{id}")

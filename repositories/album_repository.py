@@ -18,7 +18,7 @@ def save(album):
 def select_all():
     albums = []
 
-    sql = "SELECT * FROM albums"
+    sql = "SELECT * FROM albums ORDER BY artist_id ASC, release_year DESC"
     results = run_sql(sql)
     for row in results:
         artist = artist_repository.select(row['artist_id'])
@@ -65,5 +65,9 @@ def increase_stock(id):
     values = [id]
     run_sql(sql, values)
 
+
+
 def decrease_stock(id):
-    pass
+    sql = "UPDATE albums SET stock = stock -1 WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
