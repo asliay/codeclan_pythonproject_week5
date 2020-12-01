@@ -17,7 +17,7 @@ def save(artist):
 # SELECT_ALL
 def select_all():
     artists = []
-    sql = "SELECT * FROM artists"
+    sql = "SELECT * FROM artists ORDER BY name"
     results = run_sql(sql)
     for row in results:
         artist = Artist(row['name'], row['id'])
@@ -28,7 +28,7 @@ def select_all():
 # SELECT by id
 def select(id):
     artist = None
-    sql = "SELECT * from artists WHERE id = %s"
+    sql = "SELECT * FROM artists WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 

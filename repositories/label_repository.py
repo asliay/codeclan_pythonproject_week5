@@ -17,7 +17,7 @@ def save(label):
 # SELECT_ALL
 def select_all():
     labels = []
-    sql = "SELECT * FROM labels"
+    sql = "SELECT * FROM labels ORDER BY name"
     results = run_sql(sql)
     for row in results:
         artist = Label(row['name'], row['id'])
