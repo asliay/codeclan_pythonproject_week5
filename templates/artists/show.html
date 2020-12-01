@@ -28,24 +28,25 @@
             <tr>
                 <td><p class="table-label">R.R.P:</p> £{{ '%0.2f'| format(album.price) }}</td>
                 <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
-                <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
-
-               
+                <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td> 
             </tr>
-        
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
     </div>
-    
-
-        <div class="buttons-container">
-            <form class="edit-form" action="/albums/{{album.id}}/edit">
-                <button class="edit-button">EDIT</button>
-            </form>
-            <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
-                <button class="trash-button">DELETE</button>
-            </form>
-        </div>
+    <div class="buttons-container">
+        <form action="/albums/{{album.id}}/order", method="POST">
+            <button class="order-btn">ORDER STOCK</button>
+        </form>
+        <form action="/albums/{{album.id}}/sell", method="POST">
+            <button class="order-btn">SELL STOCK</button>
+        </form>
+        <form class="edit-form" action="/albums/{{album.id}}/edit">
+            <button class="edit-button">EDIT</button>
+        </form>
+        <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
+            <button class="trash-button">DELETE</button>
+        </form>
+    </div>
         <hr>
     
     {% endfor %}    
