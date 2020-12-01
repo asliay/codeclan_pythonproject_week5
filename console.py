@@ -51,6 +51,8 @@ dermot_kennedy = Artist("Dermot Kennedy")
 artist_repository.save(dermot_kennedy)
 rage = Artist("Rage Against the Machine")
 artist_repository.save(rage)
+paul_simon = Artist("Paul Simon")
+artist_repository
 
 # LABELS 
 fourteenth = Label("14th Floor (Warner)")

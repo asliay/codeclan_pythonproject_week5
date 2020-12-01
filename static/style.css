@@ -5,12 +5,12 @@
 
 .home-heading {
   margin-top: 5px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
-  color: #AFBED1;
+  color: #244e81;
   display:flex;
   flex-direction: row ;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 body {
@@ -123,7 +123,6 @@ h1 {
 
 .genre-link {  
   color: white;
-
   text-decoration: underline;
 }
 
@@ -142,7 +141,7 @@ h1 {
 }
 
 .add-link {
-  font-size: 28px;
+  font-size: 20px;
   padding: 10px;
   margin-bottom: 50px;
   text-decoration: none;
