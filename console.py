@@ -19,6 +19,8 @@ genre_repository.delete_all()
 # ARTISTS - Populates Artists table
 various = Artist("Various")
 artist_repository.save(various)
+beyonce = Artist("Beyoncé")
+artist_repository.save(beyonce)
 biffy = Artist("Biffy Clyro")
 artist_repository.save(biffy)
 dire_straits = Artist("Dire Straits")
@@ -116,6 +118,7 @@ genre_repository.save(funk)
 
 
 # ALBUMS - Populates Albums table
+
 
 # Biffy Clyro Albums
 
@@ -250,6 +253,15 @@ album_repository.save(kaleidoscope)
 
 fever_dream = Album("I Love You. It's a Fever Dream.", tallest_man, folk, 17.99, 10.79, "2019", "https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/8f/3d/f9/8f3df9cf-b15d-883c-7cef-fe2b6c69de5a/source/600x600bb.jpg", 2, dead_oceans)
 album_repository.save(fever_dream)
+
+# Beyonce Albums
+
+lemonade = Album("Lemonade", beyonce, rb, 21.99, 13.19, "2016", "https://is4-ssl.mzstatic.com/image/thumb/Music113/v4/50/a5/82/50a582f9-6690-ec06-14e7-e55d0d72e648/source/600x600bb.jpg", 3, columbia)
+album_repository.save(lemonade)
+beyonce_self_titled = Album("Beyoncé", beyonce, rb, 19.99, 11.99, "2013", "https://is2-ssl.mzstatic.com/image/thumb/Music6/v4/17/84/3a/17843a6d-1f2b-7e1e-a39f-3ff865110993/source/600x600bb.jpg", 4, columbia)
+album_repository.save(beyonce_self_titled)
+
+
 
 
 
