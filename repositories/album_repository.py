@@ -7,8 +7,8 @@ import repositories.genre_repository as genre_repository
 
 # SAVE
 def save(album):
-    sql = "INSERT INTO albums (title, artist_id, genre_id, price, cost_price, release_year, cover_art, stock, label_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [album.title, album.artist.id, album.genre.id, album.price, album.cost_price, album.release_year, album.cover_art, album.stock, album.label.id]
+    sql = "INSERT INTO albums (title, artist_id, genre_id, price, cost_price, release_year, cover_art, stock, label_id, sales_count) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [album.title, album.artist.id, album.genre.id, album.price, album.cost_price, album.release_year, album.cover_art, album.stock, album.label.id, album.sales_count]
     results = run_sql(sql, values)
     id = results[0]['id']
     album.id = id
@@ -25,7 +25,7 @@ def select_all():
         artist = artist_repository.select(row['artist_id'])
         label = label_repository.select(row['label_id'])
         genre = genre_repository.select(row['genre_id'])
-        album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['id'])
+        album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['sales_count'], row['id'])
         albums.append(album)
     return albums
 
@@ -39,7 +39,7 @@ def select(id):
         artist = artist_repository.select(result['artist_id'])
         label = label_repository.select(result['label_id'])
         genre = genre_repository.select(result['genre_id'])
-        album = Album(result['title'], artist, genre, result['price'], result['cost_price'], result['release_year'], result['cover_art'], result['stock'], label, result['id'])
+        album = Album(result['title'], artist, genre, result['price'], result['cost_price'], result['release_year'], result['cover_art'], result['stock'], label, result['sales_count'], result['id'])
     return album
 
 
@@ -56,8 +56,8 @@ def delete(id):
 
 # UPDATE
 def update(album):
-    sql = "UPDATE albums SET (title, artist_id, genre_id, price, cost_price, release_year, cover_art, stock, label_id) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [album.title, album.artist.id, album.genre.id, album.price, album.cost_price, album.release_year, album.cover_art, album.stock, album.label.id, album.id]
+    sql = "UPDATE albums SET (title, artist_id, genre_id, price, cost_price, release_year, cover_art, stock, label_id, sales_count) = (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [album.title, album.artist.id, album.genre.id, album.price, album.cost_price, album.release_year, album.cover_art, album.stock, album.label.id, album.sales_count, album.id]
     run_sql(sql, values)
 
 

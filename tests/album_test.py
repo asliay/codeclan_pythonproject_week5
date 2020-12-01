@@ -10,7 +10,7 @@ class TestAlbum(unittest.TestCase):
 
         self.label = Label("Fat Cat Records")
 
-        self.album = Album("Midnight Organ Fight", self.artist, "Indie Rock", 22.99, 13.79, "2008", "https://is2-ssl.mzstatic.com/image/thumb/Music123/v4/53/79/37/53793762-eeef-8cce-96b2-6de1c18740e2/source/600x600bb.jpg", 6, self.label)
+        self.album = Album("Midnight Organ Fight", self.artist, "Indie Rock", 22.99, 13.79, "2008", "https://is2-ssl.mzstatic.com/image/thumb/Music123/v4/53/79/37/53793762-eeef-8cce-96b2-6de1c18740e2/source/600x600bb.jpg", 6, self.label, 15)
 
     def test_album_has_title(self):
         self.assertEqual("Midnight Organ Fight", self.album.title)
@@ -39,6 +39,9 @@ class TestAlbum(unittest.TestCase):
     def test_album_has_label(self):
         self.assertEqual(self.label, self.album.label)
 
+    def test_album_has_sales_count(self):
+        self.assertEqual(15, self.album.sales_count)  
+
     def test_can_order_stock(self):
         self.album.order_stock(2)
         self.assertEqual(8, self.album.stock)
@@ -46,3 +49,5 @@ class TestAlbum(unittest.TestCase):
     def test_can_sell_stock(self):
         self.album.sell_stock(3)
         self.assertEqual(3, self.album.stock)
+
+    

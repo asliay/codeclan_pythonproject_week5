@@ -53,7 +53,7 @@ def albums_by_genre(genre):
     for row in results:
         artist = artist_repository.select(row['artist_id'])
         label = label_repository.select(row['label_id'])
-        album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['id'])
+        album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['sales_count'], row['id'])
         albums.append(album)
     return albums
     

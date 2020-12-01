@@ -28,5 +28,6 @@ CREATE TABLE albums (
     release_year INT,
     cover_art TEXT,
     stock INT,
-    label_id SERIAL REFERENCES labels(id) ON DELETE CASCADE
+    label_id SERIAL REFERENCES labels(id) ON DELETE CASCADE,
+    sales_count INT
 );

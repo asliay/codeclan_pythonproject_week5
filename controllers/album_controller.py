@@ -35,7 +35,8 @@ def create_album():
     cover_art = request.form['cover-art']
     stock = request.form['stock']
     label = label_repository.select(request.form['label_id'])
-    album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label)
+    sales_count = int(request.form['sales_count'])
+    album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, sales_count)
     album_repository.save(album)
     return redirect("/albums")
 
@@ -75,6 +76,7 @@ def update_album(id):
     cover_art = request.form['cover-art']
     stock = int(request.form['stock'])
     label = label_repository.select(request.form['label_id'])
+    sales_count = int(request.form['sales_count'])
     album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, id)
     album_repository.update(album)
     return render_template("/albums/updated.html", **locals())
