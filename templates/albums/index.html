@@ -23,8 +23,7 @@
             {% elif album.stock < 3 %}
                 <td class="stock-warning"><span> WARNING: LOW STOCK ({{album.stock}})</span></p></td>
             {% endif %}
-                </td>
-                
+                </td> 
             </tr>
             <tr>
                 <td><p class="table-label">Retail Price:</p> £{{ '%0.2f'| format(album.price) }}</td>
@@ -32,21 +31,20 @@
                 <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
             </tr>
         </table>
-
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
     </div>
     
-    <form action="/albums/{{album.id}}/order", method="POST">
-        <button class="order-btn">ORDER STOCK</button>
-    </form>
-        <div class="buttons-container">
+        <div class="buttons-container">            
+            <form action="/albums/{{album.id}}/order", method="POST">
+                <button class="order-btn">ORDER STOCK</button>
+            </form>
             <form class="edit-form" action="/albums/{{album.id}}/edit">
                 <button class="edit-btn">EDIT STOCK ENTRY</button>
             </form>
             <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
                 <button class="trash-btn">DELETE STOCK ENTRY</button>
             </form>
-            </div>
+        </div>
         <hr>
 {% endfor %}
 </section>

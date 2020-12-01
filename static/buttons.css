@@ -3,7 +3,7 @@ button {
     background-color: #0B2545;
     color: white;
     border: none;
-    width: 120px;
+    width: 180px;
     opacity: 0.6;
     transition: 0.3s;
     border-radius: 15px;
@@ -37,5 +37,5 @@ button {
   }
 
   .order-btn {
-    width: 250px;
+    width: 160px;
   }
