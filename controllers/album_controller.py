@@ -28,12 +28,12 @@ def new_album():
 def create_album():
     title = request.form['title']
     artist = artist_repository.select(request.form['artist_id'])
-    genre = request.form['genre']
+    genre = genre_repository.select(request.form['genre_id'])
     price = request.form['price']
-    cost_price = request.form['cost-price']
-    release_year = request.form['release-year']
+    cost_price = float(request.form['cost-price'])
+    release_year = float(request.form['release-year'])
     cover_art = request.form['cover-art']
-    stock = request.form['stock']
+    stock = int(request.form['stock'])
     label = label_repository.select(request.form['label_id'])
     sales_count = int(request.form['sales_count'])
     album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, sales_count)
@@ -77,7 +77,7 @@ def update_album(id):
     stock = int(request.form['stock'])
     label = label_repository.select(request.form['label_id'])
     sales_count = int(request.form['sales_count'])
-    album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, id)
+    album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, sales_count, id)
     album_repository.update(album)
     return render_template("/albums/updated.html", **locals())
 

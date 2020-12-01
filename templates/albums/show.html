@@ -5,7 +5,7 @@
 <h3>Viewing Album: {{album.title}}</h3>
 <section>
   
-       
+       {{album.sales_count}}
    
     <span><p class="album-title"> {{ album.title }}</p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a></p></span>
     <h3>Record Label: <p class="label-name"><a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></p></h3>

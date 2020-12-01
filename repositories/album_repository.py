@@ -71,6 +71,6 @@ def increase_stock(id):
 
 
 def decrease_stock(id):
-    sql = "UPDATE albums SET stock = stock -1 WHERE id = %s"
+    sql = "UPDATE albums SET stock = stock -1, sales_count = sales_count +1 WHERE id = %s"
     values = [id]
     run_sql(sql, values)

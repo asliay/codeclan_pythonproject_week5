@@ -20,7 +20,7 @@
         </select>
     </div>
     <div>
-        <select name="genre-id" id="genre_id">
+        <select name="genre_id" id="genre_id">
             <option value="">Choose Genre</option>
             {% for genre in genres|sort(attribute="category") %}
                 <option value="{{ genre.id }}">{{ genre.category }}</option>
