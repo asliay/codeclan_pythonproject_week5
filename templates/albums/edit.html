@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="/albums/{{album.id}}" method="post">
+<form action="/albums/{{album.id}}/updated" method="post">
     <div>
         <input type="text" 
                id="title" 
@@ -74,7 +74,6 @@
         <input type="number"
            name="stock"
            id="stock"
-           min="1"
            step="1"
            value="{{album.stock}}"
            required>

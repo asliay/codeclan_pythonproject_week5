@@ -12,8 +12,8 @@ def albums():
     albums = album_repository.select_all()
     return render_template("albums/index.html", albums=albums)
 
-# NEW
-#GET "/albums/new"
+
+# Enter stock information for a new album
 @albums_blueprint.route("/albums/new", methods=['GET'])
 def new_album():
     artists = artist_repository.select_all()
@@ -21,7 +21,7 @@ def new_album():
     return render_template("albums/new.html", artists = artists, labels = labels)
 
 # CREATE
-# POST "/albums"
+# Add new album to stock catalogue
 @albums_blueprint.route("/albums", methods=['POST'])
 def create_album():
     title = request.form['title']
@@ -40,6 +40,7 @@ def create_album():
 
 # SHOW
 # GET "/albums/<id>"
+# Shows a specific album entry
 @albums_blueprint.route("/albums/<id>", methods=['GET'])
 def show_album(id):
     album = album_repository.select(id)
@@ -48,6 +49,7 @@ def show_album(id):
 
 # EDIT
 # GET "/albums/<id>/edit"
+# Edit information about an album
 @albums_blueprint.route("/albums/<id>/edit", methods=['GET'])
 def edit_album(id):
     album = album_repository.select(id)
@@ -58,20 +60,21 @@ def edit_album(id):
 
 # UPDATE - 
 # PUT "albums/<id>"
-@albums_blueprint.route("/albums/<id>", methods=['POST'])
+# Save changes to album
+@albums_blueprint.route("/albums/<id>/updated", methods=['POST'])
 def update_album(id):
     title = request.form['title']
     artist = artist_repository.select(request.form['artist_id'])
     genre = request.form['genre']
-    price = request.form['price']
-    cost_price = request.form['cost-price']
+    price = float(request.form['price'])
+    cost_price = float(request.form['cost-price'])
     release_year = request.form['release-year']
     cover_art = request.form['cover-art']
-    stock = request.form['stock']
+    stock = int(request.form['stock'])
     label = label_repository.select(request.form['label_id'])
     album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, id)
     album_repository.update(album)
-    return redirect("/albums")
+    return render_template("/albums/updated.html", **locals())
 
 
 # Delete's stock record and redirects to stock page
@@ -80,4 +83,9 @@ def delete_album(id):
     album_repository.delete(id)
     return redirect("/albums")
 
-
+# Orders stock -- work in progress
+@albums_blueprint.route("/albums/<id>/order", methods=['POST'])
+def order_stock(id):
+    album = album_repository.select(id)
+    album_repository.update_stock(album)
+    return redirect("/albums")

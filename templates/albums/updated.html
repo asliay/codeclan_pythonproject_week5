@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Changes saved!</h2>
+
+<span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ artist.name }}</a></p></span>
+    
+    <h3>Record Label: <a class="label-link" href="/labels/{{album.label.id}}">{{ label.name }}</a></h3>
+    <div class="album-container">
+        <table>
+            <tr>
+                <td><p class="table-label">Genre:</p> {{ genre }}</td>
+                <td><p class="table-label">Release Year:</p> {{ release_year }}</td>
+                {% if stock >= 3 %}
+                <td><p class="table-label">Qty. in Hand:</p> {{ stock }}</td>
+            {% elif stock == 0 %}
+                <td class="no-stock"><span>OUT OF STOCK</p></td>
+            {% elif stock < 3 %}
+                <td class="stock-warning"><span> WARNING: LOW STOCK ({{stock}})</span></p></td>
+            {% endif %}
+                </td>  
+            </tr>
+            <tr>
+                <td><p class="table-label">Retail Price:</p> £{{ '%0.2f'| format(price) }}</td>
+                <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(cost_price) }}</td>
+                <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((price - cost_price) / cost_price) * 100 )}}%</td>
+            </tr>
+        </table>
+
+        <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">
+    </div>
+
+{% endblock content %}
+
+
