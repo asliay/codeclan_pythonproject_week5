@@ -5,7 +5,7 @@
     {% if albums|length == 0 %}
         No albums on this label currently in stock.
     {% else %}
-    <h3>Albums produced by {{label.name}}:</h3>
+    <h3>Viewing Albums produced by {{label.name}}:</h3>
 
     {% for album in albums| sort(attribute="artist.name") %}
 
@@ -28,7 +28,12 @@
             <tr>
                 <td><p class="table-label">R.R.P:</p> £{{ '%0.2f'| format(album.price) }}</td>
                 <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
+                
+                {% if album.cost_price > 0 %}
                 <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
+                {% else %}
+                <td><p class="table-label">Markup:</p> Free Stock</td>
+                {% endif %}
             </tr>
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">

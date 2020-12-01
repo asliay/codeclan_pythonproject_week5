@@ -130,42 +130,42 @@ genre_repository.save(rap_metal)
 
 # Biffy Clyro Albums
 
-endings = Album("A Celebration of Endings", biffy, alt_rock, 24.99, 14.99, "2020", "https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/3a/e3/77/3ae37790-7982-c517-02b4-b4ea4b55a7b5/source/600x600bb.jpg", 4, fourteenth)
+endings = Album("A Celebration of Endings", biffy, alt_rock, 21.99, 14.99, "2020", "https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/3a/e3/77/3ae37790-7982-c517-02b4-b4ea4b55a7b5/source/600x600bb.jpg", 4, fourteenth)
 album_repository.save(endings)
 
-ellipsis = Album("Ellipsis", biffy, alt_rock, 19.99, 11.99, "2016", "https://is2-ssl.mzstatic.com/image/thumb/Music49/v4/7b/29/cd/7b29cd44-0d47-963e-5ffe-89d67c6e7dc4/source/600x600bb.jpg", 5, fourteenth)
+ellipsis = Album("Ellipsis", biffy, alt_rock, 17.99, 11.99, "2016", "https://is2-ssl.mzstatic.com/image/thumb/Music49/v4/7b/29/cd/7b29cd44-0d47-963e-5ffe-89d67c6e7dc4/source/600x600bb.jpg", 5, fourteenth)
 album_repository.save(ellipsis)
 
-opposites = Album("Opposites", biffy, alt_rock, 22.99, 13.79, "2013", "https://is3-ssl.mzstatic.com/image/thumb/Music/v4/bc/b0/d7/bcb0d7a1-48f0-63d0-ea4b-a780e8f43dd6/source/600x600bb.jpg", 3, fourteenth)
+opposites = Album("Opposites", biffy, alt_rock, 20.99, 13.79, "2013", "https://is3-ssl.mzstatic.com/image/thumb/Music/v4/bc/b0/d7/bcb0d7a1-48f0-63d0-ea4b-a780e8f43dd6/source/600x600bb.jpg", 3, fourteenth)
 album_repository.save(opposites)
 
-revolutions = Album("Only Revolutions", biffy, alt_rock, 19.99, 11.99, "2009", "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/d4/ba/68/d4ba6840-7a23-3e3e-eda4-ab39a00fbf30/source/600x600bb.jpg", 2, fourteenth)
+revolutions = Album("Only Revolutions", biffy, alt_rock, 15.99, 9.99, "2009", "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/d4/ba/68/d4ba6840-7a23-3e3e-eda4-ab39a00fbf30/source/600x600bb.jpg", 2, fourteenth)
 album_repository.save(revolutions)
 
-puzzle = Album("Puzzle", biffy, alt_rock, 27.99, 16.79, "2007", "https://is5-ssl.mzstatic.com/image/thumb/Music/v4/fb/27/17/fb2717b4-403d-9aa2-72ca-757849357e5a/source/600x600bb.jpg", 3, fourteenth)
+puzzle = Album("Puzzle", biffy, alt_rock, 25.99, 16.79, "2007", "https://is5-ssl.mzstatic.com/image/thumb/Music/v4/fb/27/17/fb2717b4-403d-9aa2-72ca-757849357e5a/source/600x600bb.jpg", 3, fourteenth)
 album_repository.save(puzzle)
 
 # # Dire Straits Albums
-brothers = Album("Brothers in Arms", dire_straits, rock, 25.99, 15.59, "1985", "https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/c5/1a/30/c51a303c-2f0a-197a-be89-903b302527b5/source/600x600bb.jpg", 1, vertigo)
+brothers = Album("Brothers in Arms", dire_straits, rock, 23.99, 15.59, "1985", "https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/c5/1a/30/c51a303c-2f0a-197a-be89-903b302527b5/source/600x600bb.jpg", 1, vertigo)
 album_repository.save(brothers)
 
-making_movies = Album("Making Movies", dire_straits, rock, 24.99, 14.99, "1980", "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/d0/42/9e/d0429ee1-5338-c369-1aa2-b290ad655072/source/600x600bb.jpg", 2, vertigo)
+making_movies = Album("Making Movies", dire_straits, rock, 22.99, 14.99, "1980", "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/d0/42/9e/d0429ee1-5338-c369-1aa2-b290ad655072/source/600x600bb.jpg", 2, vertigo)
 album_repository.save(making_movies)
 
 # # Fleetwood Mac Albums 
 tango = Album("Tango in the Night", fleetwood_mac, pop_rock, 20.00, 12.00, "1987", "https://is3-ssl.mzstatic.com/image/thumb/Music111/v4/28/a6/a9/28a6a9f9-7040-37e3-cef9-ef6f8ecaabfa/source/600x600bb.jpg", 4, warner)
 album_repository.save(tango)
 
-mirage = Album("Mirage", fleetwood_mac, soft_rock, 20.00, 12.00, "1982", "https://is2-ssl.mzstatic.com/image/thumb/Music18/v4/30/5e/e2/305ee2d4-1520-4490-cd46-2336009989b1/source/600x600bb.jpg", 0, warner)
+mirage = Album("Mirage", fleetwood_mac, soft_rock, 18.00, 13.00, "1982", "https://is2-ssl.mzstatic.com/image/thumb/Music18/v4/30/5e/e2/305ee2d4-1520-4490-cd46-2336009989b1/source/600x600bb.jpg", 0, warner)
 album_repository.save(mirage)
 
 tusk = Album("Tusk", fleetwood_mac, rock, 20.00, 12.00, "1979", "https://is2-ssl.mzstatic.com/image/thumb/Music19/v4/2f/39/8d/2f398d29-996a-0800-6640-4d2e8680a30d/source/600x600bb.jpg", 2, warner)
 album_repository.save(tusk)
 
-rumours = Album("Rumours", fleetwood_mac, folk_rock, 20.00, 12.00, "1977", "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/8e/75/28/8e752885-66d0-737c-11ef-4c706672997e/source/600x600bb.jpg", 5, warner)
+rumours = Album("Rumours", fleetwood_mac, folk_rock, 19.00, 14.00, "1977", "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/8e/75/28/8e752885-66d0-737c-11ef-4c706672997e/source/600x600bb.jpg", 5, warner)
 album_repository.save(rumours)
 
-fleetwood_self_titled = Album("Fleetwood Mac", fleetwood_mac, soft_rock, 20.00, 12.00, "1975", "https://cdn.shopify.com/s/files/1/2976/0132/products/3749712_540x.jpg?v=1598653825", 3, warner)
+fleetwood_self_titled = Album("Fleetwood Mac", fleetwood_mac, soft_rock, 23.99, 17.45, "1975", "https://cdn.shopify.com/s/files/1/2976/0132/products/3749712_540x.jpg?v=1598653825", 3, warner)
 album_repository.save(fleetwood_self_titled)
 
 # # Frightened Rabbit Albums
@@ -197,16 +197,16 @@ album_repository.save(thanks_for_the_dance)
 darker = Album("You Want it Darker", leonard_cohen, folk_rock, 20.00, 12.00, "2016", "https://is3-ssl.mzstatic.com/image/thumb/Music62/v4/29/0f/e7/290fe7f2-3176-6300-3d3f-6d2946fb8fbf/source/600x600bb.jpg", 9, columbia)
 album_repository.save(darker)
 
-future = Album("The Future", leonard_cohen, soft_rock, 20.00, 12.00, "1992", "https://is2-ssl.mzstatic.com/image/thumb/Music1/v4/4e/54/5c/4e545cdc-b314-c38b-0839-0796cf70bcc3/source/600x600bb.jpg", 3, columbia)
+future = Album("The Future", leonard_cohen, soft_rock, 21.99, 14.19, "1992", "https://is2-ssl.mzstatic.com/image/thumb/Music1/v4/4e/54/5c/4e545cdc-b314-c38b-0839-0796cf70bcc3/source/600x600bb.jpg", 3, columbia)
 album_repository.save(future)
 
-your_man = Album("I'm Your Man", leonard_cohen, soft_rock, 20.00, 12.00, "1988", "https://is5-ssl.mzstatic.com/image/thumb/Music3/v4/47/03/7c/47037cbd-48ef-4a7a-d4aa-f43ce3e82135/source/600x600bb.jpg", 0, columbia)
+your_man = Album("I'm Your Man", leonard_cohen, soft_rock, 19.99, 14.00, "1988", "https://is5-ssl.mzstatic.com/image/thumb/Music3/v4/47/03/7c/47037cbd-48ef-4a7a-d4aa-f43ce3e82135/source/600x600bb.jpg", 0, columbia)
 album_repository.save(your_man)
 
 various_positions = Album("Various Positions", leonard_cohen, folk, 20.00, 12.00, "1985", "https://is5-ssl.mzstatic.com/image/thumb/Music1/v4/8d/24/57/8d2457e3-882c-99e5-9ef4-fd29ce3bfc6b/source/600x600bb.jpg", 2, columbia)
 album_repository.save(various_positions)
 
-love_and_hate = Album("Songs of Love and Hate", leonard_cohen, folk, 20.00, 12.00, "1971", "https://is5-ssl.mzstatic.com/image/thumb/Music1/v4/d0/b4/66/d0b466ea-e5d3-9d27-8f88-3d4b4d101945/source/600x600bb.jpg", 8, columbia)
+love_and_hate = Album("Songs of Love and Hate", leonard_cohen, folk, 17.99, 13.00, "1971", "https://is5-ssl.mzstatic.com/image/thumb/Music1/v4/d0/b4/66/d0b466ea-e5d3-9d27-8f88-3d4b4d101945/source/600x600bb.jpg", 8, columbia)
 album_repository.save(love_and_hate)
 
 from_a_room = Album("Songs from a Room", leonard_cohen, folk, 20.00, 12.00, "1969", "https://is5-ssl.mzstatic.com/image/thumb/Music3/v4/ac/b4/3e/acb43e0a-f83e-0268-d38d-f4b0da8cd373/source/600x600bb.jpg", 2,columbia)

@@ -5,7 +5,7 @@
     {% if albums|length == 0 %}
         No albums of this genre currently in stock.
     {% else %}
-    <h3>Albums categorised under {{genre.category}}:</h3>
+    <h3>Viewing Albums categorised under {{genre.category}}:</h3>
     {% for album in albums | sort(attribute="artist.name") %}
     
     <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist">{{ album.artist.name }}</p></span>
@@ -23,12 +23,15 @@
                 <td class="stock-warning"><span> WARNING: LOW STOCK ({{album.stock}})</span></p></td>
             {% endif %}
                 </td>
-                
             </tr>
             <tr>
                 <td><p class="table-label">R.R.P:</p> £{{ '%0.2f'| format(album.price) }}</td>
                 <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
-                <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td> 
+                {% if cost_price > 0 %}
+                <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((price - cost_price) / cost_price) * 100 )}}%</td>
+                {% else %}
+                <td><p class="table-label">Markup:</p> Free Stock</td>
+                {% endif %}
             </tr>
         </table>
         <img class ="cover-art" src="{{album.cover_art}}" alt="Album Cover Art">

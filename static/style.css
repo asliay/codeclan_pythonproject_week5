@@ -21,6 +21,7 @@ body {
   margin: 10px;
 }
 
+
 /*  Navigation  */
 .sidenav {
   height: 100%; 
@@ -57,7 +58,7 @@ body {
 
 table {
   border: 2px solid #0B2545;
-  width: 50%;
+  width: 60%;
   padding: 10px;
 }
 
@@ -103,6 +104,10 @@ hr {
 
 h1 {
   text-transform: uppercase;
+}
+
+h3 { 
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .album-title, .album-artist{
