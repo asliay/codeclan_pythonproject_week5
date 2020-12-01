@@ -9,8 +9,8 @@
     {% for album in albums|sort(reverse = true,attribute="release_year") %}
     
     <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist">{{ album.artist.name }}  - {{album.release_year}}</p></span>
-    <h3>Genre: <a class="genre-link" href="/genres/{{album.genre.id}}">{{ album.genre.category }}</a></p></h3>
-    <h3>Record Label: <a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
+    <h3>GENRE: <a class="genre-link" href="/genres/{{album.genre.id}}">{{ album.genre.category }}</a></p></h3>
+    <h3>RECORD LABEL: <a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
     <div class="album-container">
         <table>
             <tr>
