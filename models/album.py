@@ -15,9 +15,9 @@ class Album:
 
 
     # increase stock 
-    # def order_stock(self, amount):
-    #     self.stock += amount
+    def order_stock(self, amount):
+        self.stock += amount
 
-    # # decrease stock
-    # def sell_stock(self, amount):
-    #     self.stock -= amount
+    # decrease stock
+    def sell_stock(self, amount):
+        self.stock -= amount

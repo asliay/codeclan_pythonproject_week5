@@ -38,3 +38,11 @@ class TestAlbum(unittest.TestCase):
 
     def test_album_has_label(self):
         self.assertEqual(self.label, self.album.label)
+
+    def test_can_order_stock(self):
+        self.album.order_stock(2)
+        self.assertEqual(8, self.album.stock)
+    
+    def test_can_sell_stock(self):
+        self.album.sell_stock(3)
+        self.assertEqual(3, self.album.stock)
