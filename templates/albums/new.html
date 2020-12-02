@@ -4,6 +4,7 @@
 
 <form action="/albums" method="post">
     <div>
+        <label class="form-label" for="title">Title: </label>
         <input type="text"
                name="title"
                id="title"
@@ -12,6 +13,7 @@
                autofocus>
     </div>
     <div>
+        <label class="form-label" for="artist_id">Artist: </label>
         <select name="artist_id" id="artist_id">
             <option value="">Choose Artist</option>
             {% for artist in artists|sort(attribute="name") %}
@@ -20,6 +22,7 @@
         </select>
     </div>
     <div>
+        <label class="form-label" for="genre">Genre: </label>
         <select name="genre_id" id="genre_id">
             <option value="">Choose Genre</option>
             {% for genre in genres|sort(attribute="category") %}
@@ -28,22 +31,27 @@
         </select>
     </div>
     <div>
+        <label class="form-label" for="price">Retail Price: </label>
         <input type="number"
                step="0.01"
                name="price"
                id="price"
+               min="0.01"
                placeholder="Retail Price"
                required>
     </div>
     <div>
+        <label class="form-label" for="cost-price">Cost Price: </label>
         <input type="number"
                step="0.01"
                name="cost-price"
                id="cost-price"
+               min="0.00"
                placeholder="Cost Price"
                required>
     </div>
     <div>
+        <label class="form-label" for="release-year">Release Year: </label>
         <input type="number" 
                 name="release-year"
                 id="release-year"
@@ -54,6 +62,7 @@
                 required/> 
     </div>
     <div>
+        <label class="form-label" for="label_id">Record Label: </label>
         <select name="label_id" id="label_id">
             <option value="">Choose Label</option>
             {% for label in labels|sort(attribute="name") %}
@@ -62,6 +71,7 @@
         </select>
     </div>
     <div>
+        <label class="form-label" for="cover-art">Album Cover: </label>
         <input type="url"
                 name="cover-art"
                 id="cover-art"
@@ -69,6 +79,7 @@
                 >
     </div>
     <div>
+        <label class="form-label" for="stock">Qty. in Hand: </label>
         <input type="number"
                name="stock"
                id="stock"
@@ -78,6 +89,7 @@
                required>
     </div>
     <div>
+        <label class="form-label" for="sales_count"># of Sales: </label>
         <input type="number"
                name="sales_count"
                id="sales_count"
