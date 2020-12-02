@@ -6,8 +6,13 @@
 <section>
   
    
-    <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a>  - {{album.release_year}}</p></span>
+    <span>
+        <p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by 
+        <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ album.artist.name }}</a>  - {{album.release_year}}</p>
+    </span>
+
     <h3>GENRE: <a class="genre-link" href="/genres/{{album.genre.id}}">{{ album.genre.category }}</a></p></h3>
+
     <h3>RECORD LABEL: <a class="label-link" href="/labels/{{album.label.id}}">{{ album.label.name }}</a></h3>
 
     <div class="album-container">
@@ -17,7 +22,7 @@
                 <td><p class="table-label">Cost Price:</p> £{{ '%0.2f'| format(album.cost_price) }}</td>
             </tr>
             <tr>
-                {% if album.stock >= 3 %}
+            {% if album.stock >= 3 %}
                 <td><p class="table-label">Qty. in Hand:</p> {{ album.stock }}</td>
             {% elif album.stock == 0 %}
                 <td class="no-stock"><span>OUT OF STOCK</span></td>
@@ -26,15 +31,13 @@
             {% endif %}
                 </td> 
                 <td><p class="table-label">Sales:</p>{{album.sales_count}}</td>
-                {% if album.cost_price == 0 %}
-                    <td><p class="table-label">Markup:</p> Free Stock</td>
-                {% elif (((album.price - album.cost_price) / album.cost_price) * 100) < 50 %}
+            {% if album.cost_price == 0 %}
+                <td><p class="table-label">Markup:</p> Free Stock</td>
+            {% elif (((album.price - album.cost_price) / album.cost_price) * 100) < 50 %}
                 <td><p class="table-label">MARKUP: </p><span class="stock-warning">{{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</span></td>
-                {% else %}
+            {% else %}
                 <td><p class="table-label">Markup:</p> {{ '%0.2f'| format(((album.price - album.cost_price) / album.cost_price) * 100 )}}%</td>
-                
-                
-                {% endif %}
+            {% endif %}
 
             </tr>
         </table>

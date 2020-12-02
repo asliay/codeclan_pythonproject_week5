@@ -6,18 +6,14 @@
 <section class="bestseller-container">
     <div>
         <table class="bestseller-tbl">
-            <th>Bestsellers</th>
-            
-                
-                    
-        {% for album in albums %}
+            <th>Bestsellers</th> 
+            {% for album in albums %}
 
-        <tr class ="bestseller-entry"><td>{{album.title}}</td> <td>{{album.artist.name}}</td> <td>{{album.genre.category}}</td><td> {{album.sales_count}} SOLD</td></tr>
+                <tr class ="bestseller-entry">
+                    <td>{{album.title}}</td> <td>{{album.artist.name}}</td> <td>{{album.genre.category}}</td><td> {{album.sales_count}} SOLD</td>
+                </tr>
 
-        {% endfor %}
-                       
-                
-            
+            {% endfor %}
         </table>
     </div>
 </section>

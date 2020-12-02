@@ -197,20 +197,11 @@ album_repository.save(thanks_for_the_dance)
 darker = Album("You Want it Darker", leonard_cohen, folk_rock, 20.00, 12.00, "2016", "https://is3-ssl.mzstatic.com/image/thumb/Music62/v4/29/0f/e7/290fe7f2-3176-6300-3d3f-6d2946fb8fbf/source/600x600bb.jpg", 9, columbia, 19)
 album_repository.save(darker)
 
-future = Album("The Future", leonard_cohen, soft_rock, 21.99, 14.19, "1992", "https://is2-ssl.mzstatic.com/image/thumb/Music1/v4/4e/54/5c/4e545cdc-b314-c38b-0839-0796cf70bcc3/source/600x600bb.jpg", 3, columbia, 8)
-album_repository.save(future)
-
-your_man = Album("I'm Your Man", leonard_cohen, soft_rock, 19.99, 14.00, "1988", "https://is5-ssl.mzstatic.com/image/thumb/Music3/v4/47/03/7c/47037cbd-48ef-4a7a-d4aa-f43ce3e82135/source/600x600bb.jpg", 0, columbia, 13)
+your_man = Album("I'm Your Man", leonard_cohen, soft_rock, 19.99, 14.00, "1988", "https://is5-ssl.mzstatic.com/image/thumb/Music3/v4/47/03/7c/47037cbd-48ef-4a7a-d4aa-f43ce3e82135/source/600x600bb.jpg", 0, columbia, 5)
 album_repository.save(your_man)
 
 various_positions = Album("Various Positions", leonard_cohen, folk, 20.00, 12.00, "1985", "https://is5-ssl.mzstatic.com/image/thumb/Music1/v4/8d/24/57/8d2457e3-882c-99e5-9ef4-fd29ce3bfc6b/source/600x600bb.jpg", 2, columbia, 0)
 album_repository.save(various_positions)
-
-love_and_hate = Album("Songs of Love and Hate", leonard_cohen, folk, 17.99, 13.00, "1971", "https://is5-ssl.mzstatic.com/image/thumb/Music1/v4/d0/b4/66/d0b466ea-e5d3-9d27-8f88-3d4b4d101945/source/600x600bb.jpg", 8, columbia, 6)
-album_repository.save(love_and_hate)
-
-from_a_room = Album("Songs from a Room", leonard_cohen, folk, 20.00, 12.00, "1969", "https://is5-ssl.mzstatic.com/image/thumb/Music3/v4/ac/b4/3e/acb43e0a-f83e-0268-d38d-f4b0da8cd373/source/600x600bb.jpg", 2, columbia, 4)
-album_repository.save(from_a_room)
 
 songs_of = Album("Songs of Leonard Cohen", leonard_cohen, folk, 20.00, 12.00, "1967", "https://is3-ssl.mzstatic.com/image/thumb/Music5/v4/10/3a/c2/103ac256-eece-c5fc-5ce2-a0f800ec91e8/source/600x600bb.jpg", 7, columbia, 7)
 album_repository.save(songs_of)
@@ -234,11 +225,6 @@ album_repository.save(paramore_self_titled)
 brand_new_eyes = Album("Brand New Eyes", paramore, pop_rock, 17.99, 10.79, "2009", "https://is3-ssl.mzstatic.com/image/thumb/Music62/v4/5d/db/33/5ddb3338-b808-ffee-4bd6-263b655a33ba/source/600x600bb.jpg", 2, fueled_by_ramen, 8)
 album_repository.save(brand_new_eyes)
 
-riot = Album("Riot!", paramore, alt_rock, 17.99, 10.79, "2007", "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/03/25/62/032562e5-4eed-2dce-46e8-6c5591aa30c7/source/600x600bb.jpg", 1, fueled_by_ramen, 0)
-album_repository.save(riot)
-
-falling = Album("All We Know is Falling", paramore, alt_rock, 17.99, 10.79, "2005", "https://is5-ssl.mzstatic.com/image/thumb/Music/v4/f2/3e/8e/f23e8ea6-7071-090c-afeb-da363a0466a1/source/600x600bb.jpg", 1, fueled_by_ramen, 1)
-album_repository.save(falling)
 
 # Phoebe Bridgers Albums
 punisher = Album("Punisher", phoebe_bridgers, indie_rock, 21.99, 13.19, "2020", "https://is3-ssl.mzstatic.com/image/thumb/Music113/v4/55/5d/c8/555dc8e0-32f1-0a53-ad7a-422244d9f75e/source/600x600bb.jpg", 6, dead_oceans, 14)
