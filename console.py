@@ -283,7 +283,7 @@ rage_self_titled = Album("Rage Against the Machine", rage, rap_metal, 21.99, 13.
 album_repository.save(rage_self_titled)
 
 # Paul Simon Graceland
-graceland = Album("Graceland", paul_simon, folk, 21.99, 17.99, "1986", "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/c6/c6/ba/c6c6ba77-8773-0930-bddc-f19a702ad7b6/source/600x600bb.jpg", 4, warner, 11)
+graceland = Album("Graceland", paul_simon, folk, 21.99, 17.99, "1986", "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/c6/c6/ba/c6c6ba77-8773-0930-bddc-f19a702ad7b6/source/600x600bb.jpg", 4, warner, 14)
 album_repository.save(graceland)
 
 
