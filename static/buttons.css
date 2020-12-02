@@ -1,5 +1,5 @@
 /* Buttons */
-button {
+.order-btn, .sell-btn, .edit-btn, .trash-btn, .submit-btn {
     background-color: #0B2545;
     color: white;
     border: none;

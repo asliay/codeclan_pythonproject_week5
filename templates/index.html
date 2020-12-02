@@ -7,15 +7,17 @@
     <div>
         <table class="bestseller-tbl">
             <th>Bestsellers</th>
-            <tr>
-                <td>
-                    <ol>
-        {% for album in albums %} 
-            <li class ="bestseller-entry">{{album.title}} - {{album.artist.name}} | {{album.sales_count}} SOLD</li>
+            
+                
+                    
+        {% for album in albums %}
+
+        <tr class ="bestseller-entry"><td>{{album.title}}</td> <td>{{album.artist.name}}</td> <td> {{album.sales_count}} SOLD</td></tr>
+
         {% endfor %}
-                    </ol>   
-                </td>
-            </tr>
+                       
+                
+            
         </table>
     </div>
 </section>
