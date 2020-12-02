@@ -5,7 +5,7 @@
     {% if albums|length == 0 %}
         No albums by this artist currently in stock.
     {% else %}
-    <h3>Viewing Albums by {{artist.name}}:</h3>
+    <h2>Viewing Albums by {{artist.name}}:</h2>
     {% for album in albums|sort(reverse = true,attribute="release_year") %}
     
     <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ album.title }} </a></p> by <p class="album-artist">{{ album.artist.name }}  - {{album.release_year}}</p></span>

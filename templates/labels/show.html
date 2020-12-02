@@ -5,7 +5,7 @@
     {% if albums|length == 0 %}
         No albums on this label currently in stock.
     {% else %}
-    <h3>Viewing Albums produced by {{label.name}}:</h3>
+    <h2>Viewing Albums produced by {{label.name}}:</h2>
 
     {% for album in albums| sort(attribute="artist.name") %}
 
