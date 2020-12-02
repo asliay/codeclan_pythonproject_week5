@@ -1,16 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="home-heading">RECORD STORE SALES</h1>
+<h1 class="home-heading">VINYL INVENTORY</h1>
 <body class="body"></body>
 <section class="bestseller-container">
     <div>
-        <table>
-        <ol>
-{% for album in albums %} 
-            <tr><td><li class ="bestseller-entry">{{album.title}} - {{album.artist.name}} | (SALES: {{album.sales_count}})</li></td></tr>
-{% endfor %}
-        </ol>
+        <table class="bestseller-tbl">
+            <th>Bestsellers</th>
+            <tr>
+                <td>
+                    <ol>
+        {% for album in albums %} 
+            <li class ="bestseller-entry">{{album.title}} - {{album.artist.name}} | {{album.sales_count}} SOLD</li>
+        {% endfor %}
+                    </ol>   
+                </td>
+            </tr>
         </table>
     </div>
 </section>

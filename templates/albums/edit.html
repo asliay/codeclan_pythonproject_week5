@@ -1,99 +1,110 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<form action="/albums/{{album.id}}/updated" method="post">
-    <div>
-        <input type="text" 
-               id="title" 
-               name="title" 
-               value="{{album.title}}"
-               required>
-    </div>
-    <div> 
-        <select id="artist" name="artist_id">
-            {% for artist in artists| sort(attribute="name") %}
-                <option value="{{ artist.id }}"
-            {% if album.artist.id == artist.id %} selected="selected"{% endif %}>
-                {{ artist.name }}
+<div class="container">
+    <form action="/albums/{{album.id}}/updated" method="post">
+        <div>
+            <label class="form-label" for="title">Title: </label>
+            <input type="text" 
+                id="title" 
+                name="title" 
+                value="{{album.title}}"
+                required>
+        </div>
+        <div> 
+            <label class="form-label" for="artist">Artist: </label>
+            <select id="artist" name="artist_id">
+                {% for artist in artists| sort(attribute="name") %}
+                    <option value="{{ artist.id }}"
+                {% if album.artist.id == artist.id %} selected="selected"{% endif %}>
+                    {{ artist.name }}
+                    </option>
+                    {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label class="form-label" for="genre">Genre: </label>
+            <select name="genre_id" id="genre_id">
+                <option value="">Choose Genre</option>
+                {% for genre in genres|sort(attribute="category") %}
+                    <option value="{{ album.genre.id }}"
+                    {% if album.genre.id == genre.id %} selected="selected:"{% endif %}>
+                    {{ genre.category }}
                 </option>
                 {% endfor %}
-        </select>
-    </div>
-    <div>
-        <select name="genre_id" id="genre_id">
-            <option value="">Choose Genre</option>
-            {% for genre in genres|sort(attribute="category") %}
-                <option value="{{ album.genre.id }}"
-                {% if album.genre.id == genre.id %} selected="selected:"{% endif %}>
-                {{ genre.category }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <input type="number"
-           step="0.01"
-           name="price"
-           id="price"
-           value="{{album.price}}"
-           required>
-    </div>
-    <div>
-        <input type="number"
-           step="0.01"
-           name="cost-price"
-           id="cost-price"
-           value="{{album.cost_price}}"
-           required>
-    </div>
-    <div>
-        <input type="number" 
-            name="release-year"
-            id="release-year"
-            min="1900" 
-            max="2020" 
-            step="1" 
-            value="{{album.release_year}}"
-            required/> 
-    </div>
-    <div>
-        <select name="label_id" id="label_id">
-            <option value="">Choose Label</option>
-            {% for label in labels|sort(attribute="name") %}
-                <option value="{{ label.id }}" 
-            {% if album.label.id == label.id %} selected="selected"{% endif %}>
-                {{ label.name }}</option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <input type="text"
-                name="cover-art"
-                id="cover-art"
-                value="{{album.cover_art}}"
-                >
-    </div>
-    <div>
-        <input type="number"
-           name="stock"
-           id="stock"
-           step="1"
-           value="{{album.stock}}"
-           required>
-    </div>
-    <div>
-        <input type="number"
-               name="sales_count"
-               id="sales_count"
-               step="1"
-               value="{{album.sales_count}}"
-               required>
+            </select>
+        </div>
+        <div>
+            <label class="form-label" for="price">Retail Price: </label>
+            <input type="number"
+            step="0.01"
+            name="price"
+            id="price"
+            value="{{album.price}}"
+            required>
+        </div>
+        <div>
+            <label class="form-label" for="cost-price">Cost Price: </label>
+            <input type="number"
+            step="0.01"
+            name="cost-price"
+            id="cost-price"
+            value="{{album.cost_price}}"
+            required>
+        </div>
+        <div>
+            <label class="form-label" for="release_year">Release Year: </label>
+            <input type="number" 
+                name="release-year"
+                id="release-year"
+                min="1900" 
+                max="2020" 
+                step="1" 
+                value="{{album.release_year}}"
+                required/> 
+        </div>
+        <div>
+            <label class="form-label" for="label">Record Label: </label>
+            <select name="label_id" id="label_id">
+                <option value="">Choose Label</option>
+                {% for label in labels|sort(attribute="name") %}
+                    <option value="{{ label.id }}" 
+                {% if album.label.id == label.id %} selected="selected"{% endif %}>
+                    {{ label.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label class="form-label" for="cover-art">Album Cover: </label>
+            <input type="text"
+                    name="cover-art"
+                    id="cover-art"
+                    value="{{album.cover_art}}"
+                    >
+        </div>
+        <div>
+            <label class="form-label" for="stock">Qty. in Hand: </label>
+            <input type="number"
+            name="stock"
+            id="stock"
+            step="1"
+            value="{{album.stock}}"
+            required>
+        </div>
+        <div>
+            <label  class="form-label" for="sales_count"># of Sales: </label>
+            <input type="number"
+                name="sales_count"
+                id="sales_count"
+                step="1"
+                value="{{album.sales_count}}"
+                required>
 
-    </div>
+        </div>
 
-    <button class="submit-button" type="submit">Confirm Changes</button>
-</form> 
+        <button class="submit-button" type="submit">Confirm Changes</button>
+    </form> 
+</div>
 {% endblock content %}
 
 
