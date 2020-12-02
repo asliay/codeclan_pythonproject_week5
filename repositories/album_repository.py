@@ -69,8 +69,20 @@ def increase_stock(id):
     run_sql(sql, values)
 
 
-
+# Sell stock
 def decrease_stock(id):
     sql = "UPDATE albums SET stock = stock -1, sales_count = sales_count +1 WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def bestsellers():
+    albums = []
+    sql = "SELECT * FROM albums ORDER BY sales_count DESC LIMIT 12"
+    results = run_sql(sql)
+    for row in results:
+        artist = artist_repository.select(row['artist_id'])
+        label = label_repository.select(row['label_id'])
+        genre = genre_repository.select(row['genre_id'])
+        album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['sales_count'], row['id'])
+        albums.append(album)
+    return albums
