@@ -29,16 +29,16 @@ def create_album():
     title = request.form['title']
     artist = artist_repository.select(request.form['artist_id'])
     genre = genre_repository.select(request.form['genre_id'])
-    price = request.form['price']
+    price = float(request.form['price'])
     cost_price = float(request.form['cost-price'])
-    release_year = float(request.form['release-year'])
+    release_year = (request.form['release-year'])
     cover_art = request.form['cover-art']
     stock = int(request.form['stock'])
     label = label_repository.select(request.form['label_id'])
     sales_count = int(request.form['sales_count'])
     album = Album(title, artist, genre, price, cost_price, release_year, cover_art, stock, label, sales_count)
     album_repository.save(album)
-    return redirect("/albums")
+    return render_template("/albums/updated.html", **locals())
 
 
 # SHOW

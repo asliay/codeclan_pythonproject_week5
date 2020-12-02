@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<a class="add-link" href="/albums"> < Back to Albums</a>
+<h3>Stock changes have been saved.</h3>
 
-<h3>Changes saved!</h2>
 
 <span><p class="album-title"><a class="album-link" href="/albums/{{album.id}}">{{ title }} </a></p> by <p class="album-artist"><a class="artist-link" href="/artists/{{album.artist.id}}">{{ artist.name }}</a>  - {{release_year}}</p></span>
     <h3>GENRE: <a class="genre-link" href="/genres/{{genre.id}}">{{ genre.category }}</a></h3>
@@ -44,10 +45,10 @@
             <button class="order-btn">SELL STOCK</button>
         </form>
         <form class="edit-form" action="/albums/{{album.id}}/edit">
-            <button class="edit-button">EDIT</button>
+            <button class="edit-btn">EDIT</button>
         </form>
         <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
-            <button class="trash-button">DELETE</button>
+            <button class="trash-btn">DELETE</button>
         </form>
     </div>
 {% endblock content %}
