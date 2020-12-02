@@ -29,6 +29,7 @@ ol > li {
 
 .home-heading {
   margin-top: 5px;
+  margin-left: 15px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
   color: #244e81;
@@ -49,14 +50,14 @@ body {
 /*  Navigation  */
 .sidenav {
   height: 100%; 
-  width: 160px; 
+  width: 180px; 
   position: fixed; 
   z-index: 1; 
   top: 0; 
   left: 0;
   background-color: #0B2545; 
   overflow-x: hidden; 
-  padding-top: 20px;
+  padding-top: 150px;
 }
 
 .sidenav a {
@@ -183,7 +184,7 @@ h3 {
   font-style: italic;
 }
 
-.artist-entry, .list-link, .label-entry, .list-link {
+.artist-entry, .list-link, .label-entry, .genre-entry {
   text-decoration: none;
   list-style: none;
   color: white;
