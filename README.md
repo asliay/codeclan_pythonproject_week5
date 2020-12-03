@@ -11,6 +11,13 @@ python3 console.py
 flask run
 ````
 
+## Technology Used
+
+* Python
+* Flask
+* Postgresql
+
+
 ## Features  
 
 * Shows shop inventory of Albums. Showing Album Title, Artist, Cover Art, Genre, Record Label, Price (Retail and Cost), Qty. in Hand, # of Sales, and Markup %.  
