@@ -20,6 +20,16 @@ flask run
 * Edit and Delete buttons to Edit or Delete stock listing.  
 * Order button simulates ordering stock - increases Qty. in Hand by 1.
 * Sell button simulates selling stock - decrease Qty. in Hand by 1 and increase # of Sales by 1 for specific Album listing.
-* Bestsellers (Top 12) table on home page - changes in relation to changes to # of Sales.
+* Bestsellers (Top 12) table on home page - changes in relation to changes to # of Sales.  
 
+---
+<br>  
+  
+  
+ ![Top Sales Homepage](static/images/inventory_project_top_sales_view.png)  
+
+
+ <br>
+
+ ![Top Sales Homepage](static/images/inventory_project_stock_view.png) 
 
