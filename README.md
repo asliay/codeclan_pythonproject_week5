@@ -3,10 +3,12 @@
 ## Running the App  
 
 In terminal:  
-> createdb stock_manager  
-> psql -d stock_manager -f db/stock_manager.sql  
-> python3 console.py  
-> flask run
+
+```` createdb stock_manager  
+psql -d stock_manager -f db/stock_manager.sql  
+python3 console.py  
+flask run
+````
 
 ## Features  
 
@@ -18,3 +20,5 @@ In terminal:
 * Order button simulates ordering stock - increases Qty. in Hand by 1.
 * Sell button simulates selling stock - decrease Qty. in Hand by 1 and increase # of Sales by 1 for specific Album listing.
 * Bestsellers (Top 12) table on home page - changes in relation to changes to # of Sales.
+
+

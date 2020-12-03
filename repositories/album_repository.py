@@ -86,3 +86,7 @@ def bestsellers():
         album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['sales_count'], row['id'])
         albums.append(album)
     return albums
+
+# Search function?
+
+# "SELECT title, name FROM albums INNER JOIN artists on artists.id = albums.artist_id WHERE name LIKE 'Leonard Cohen';"

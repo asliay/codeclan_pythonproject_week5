@@ -1,9 +1,9 @@
 from flask import Flask, render_template
 
-from controllers.album_controller import albums_blueprint
-from controllers.artist_controller import artists_blueprint
-from controllers.label_controller import labels_blueprint
-from controllers.genre_controller import genres_blueprint
+from controllers.albums_controller import albums_blueprint
+from controllers.artists_controller import artists_blueprint
+from controllers.labels_controller import labels_blueprint
+from controllers.genres_controller import genres_blueprint
 
 import repositories.album_repository as album_repository
 
