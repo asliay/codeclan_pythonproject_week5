@@ -4,7 +4,8 @@
 
 In terminal:  
 
-```` createdb stock_manager  
+```` 
+createdb stock_manager  
 psql -d stock_manager -f db/stock_manager.sql  
 python3 console.py  
 flask run
