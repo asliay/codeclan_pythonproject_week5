@@ -30,13 +30,20 @@ flask run
 * Bestsellers (Top 12) table on home page - changes in relation to changes to # of Sales.  
 
 ---
-<br>  
+ 
   
-  
- ![Top Sales Homepage](static/images/inventory_project_top_sales_view.png)  
+### Top Sales / Home Page
 
+ ![Top Sales Homepage](static/images/inventory_project_topsales_view.png)  
 
- <br>
+---
 
- ![Top Sales Homepage](static/images/inventory_project_stock_view.png) 
+ ### Inventory Page View  
 
+ ![Stock View](static/images/inventory_project_stock_view.png) 
+ 
+ ---
+
+ ### Specific Album Stock View
+
+ ![Album View](static/images/inventory_project_album_view.png)  
