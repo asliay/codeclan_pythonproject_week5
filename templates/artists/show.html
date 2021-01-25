@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if albums|length == 0 %}
-        No albums by this artist currently in stock.
+        No albums by this artist in the inventory database.
     {% else %}
     <h2>Viewing Albums by {{artist.name}}:</h2>
     {% for album in albums|sort(reverse = true,attribute="release_year") %}

@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if albums|length == 0 %}
-        No albums of this genre currently in stock.
+        No albums of this genre in the inventory database.
     {% else %}
     <h2>Viewing Albums categorised under {{genre.category}}:</h2>
     {% for album in albums | sort(attribute="artist.name") %}

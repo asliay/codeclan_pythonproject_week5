@@ -101,3 +101,5 @@ def sell_stock(id):
     if album.stock > 0:
         album_repository.decrease_stock(id)
     return redirect(f"/albums/{id}")
+
+# @albums_blueprint.route("/albums/found-albums")

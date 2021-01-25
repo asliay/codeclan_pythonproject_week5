@@ -88,5 +88,17 @@ def bestsellers():
     return albums
 
 # Search function?
+# def find_albums_by_artist(artist):
+#     found_albums = []
+#     sql = "SELECT * FROM albums WHERE title, artist_id = %s"
+#     values = [artist.id]
+#     results = run_sql(sql,values)
+
+#     for row in results:
+#         genre = genre_repository.select(row['genre_id'])
+#         label = genre_repository.select(row['label_id'])
+#         album = Album(row['title'], artist, genre, row['price'], row['cost_price'], row['release_year'], row['cover_art'], row['stock'], label, row['sales_count'], row['id'])
+#         found_albums.append(album)
+#     return found_albums
 
 # "SELECT title, name FROM albums INNER JOIN artists on artists.id = albums.artist_id WHERE name LIKE 'Leonard Cohen';"

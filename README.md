@@ -38,12 +38,12 @@ flask run
 
 ---
 
- ### Inventory Page View  
+### Inventory Page View  
 
  ![Stock View](static/images/inventory_project_stock_view.png) 
  
  ---
 
- ### Specific Album Stock View
+### Specific Album Stock View
 
  ![Album View](static/images/inventory_project_album_view.png)  
