@@ -1,23 +1,5 @@
 # Record Shop Inventory App
 
-## Running the App  
-
-In terminal:  
-
-```` 
-createdb stock_manager  
-psql -d stock_manager -f db/stock_manager.sql  
-python3 console.py  
-flask run
-````
-
-## Technology Used
-
-* Python
-* Flask
-* Postgresql
-
-
 ## Features  
 
 * Shows shop inventory of Albums. Showing Album Title, Artist, Cover Art, Genre, Record Label, Price (Retail and Cost), Qty. in Hand, # of Sales, and Markup %.  
@@ -47,3 +29,20 @@ flask run
  ### Specific Album Stock View
 
  ![Album View](static/images/inventory_project_album_view.png)  
+ 
+ ## Running the App  
+
+In terminal:  
+
+```` 
+createdb stock_manager  
+psql -d stock_manager -f db/stock_manager.sql  
+python3 console.py  
+flask run
+````
+
+## Technology Used
+
+* Python
+* Flask
+* Postgresql
